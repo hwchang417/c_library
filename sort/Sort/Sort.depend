@@ -1,0 +1,60 @@
+# depslib dependency file v1.0
+1551428052 source:d:\notebook\interview\collection\c library\tree\tree.cpp
+	"../common/debug.h"
+	"tree.h"
+
+1528881182 d:\notebook\interview\collection\c library\common\debug.h
+	<stdio.h>
+	<stdio.h>
+	<stdlib.h>
+
+1551578431 d:\notebook\interview\collection\c library\tree\tree.h
+	"../common/debug.h"
+
+1551435583 source:d:\notebook\interview\collection\c library\sort\sort.cpp
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../tree/tree.h"
+
+1551577550 source:d:\notebook\interview\collection\c library\tree\tree.c
+	<stdio.h>
+	<stdlib.h>
+	<assert.h>
+	"../common/debug.h"
+	"tree.h"
+
+1551530433 source:d:\notebook\interview\collection\c library\arraylist\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<assert.h>
+	"ArrayList.h"
+
+1551531406 d:\notebook\interview\collection\c library\arraylist\arraylist.h
+
+1551538347 source:d:\notebook\interview\collection\c library\sort\sort.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"../tree/tree.h"
+	"../arrayList/arrayList.h"
+
+1551541656 source:d:\notebook\interview\collection\c library\sort\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"sort.h"
+	"../arrayList/arrayList.h"
+
+1551497586 d:\notebook\interview\collection\c library\sort\sort.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"../tree/tree.h"
+
+1551531684 source:d:\notebook\interview\collection\c library\tree\main.c
+	"../common/debug.h"
+	"tree.h"
+

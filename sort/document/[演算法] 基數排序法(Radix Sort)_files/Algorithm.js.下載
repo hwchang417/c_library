@@ -1,0 +1,74 @@
+
+
+var AAN = NOTEPAD.namespace('NOTEPAD.ALGORITHM.ANIMATE');
+
+/*
+   <div class="animate" style="width: 650px;">
+			<div class="autoPlayDemoDiv">
+				速度：<span id="speedSlider" class="slider"></span>
+				<input type="button" value="Auto" class="autoRun" />
+			</div>
+			<div class="manualPlayDemoDiv">
+				<input type="button" value="<<" class="prePicBtn" />
+				<input type="button" value=">>" class="nextPicBtn" />
+			</div>
+			<div class="clear"></div>
+			<div id="animateDemo" style="width:650px; height: 300px;"></div>			
+		</div>
+ */
+AAN.config = {
+	index: 0,
+	speed: 2000,
+	preFix: '',
+	picArray: null,
+	sliderSelector: '#speedSlider',
+	demoSelector: '#animateDemo'
+};
+var AAC = AAN.config;
+
+AAN.init = function(){
+	$( AAC.sliderSelector ).slider({min: 300, max: 10000, value: 3000, 
+			slide: function(event, ui){ 
+				AAC.speed = $( AAC.sliderSelector ).slider( "value" );
+			}
+		});
+	$( AAC.demoSelector ).css('background','url(img/' + AAC.preFix + '01.png)');	
+	$('.autoRun').click(function(){
+		AAC.index = 0;
+		var url = 'url(img/' + AAC.preFix + AAC.picArray[0].SN + '.png)';	
+		$( AAC.demoSelector ).css('background', url);		
+		AAN.autoRun();
+	});
+	$('.prePicBtn').click(AAN.prePic);
+	$('.nextPicBtn').click(AAN.nextPic);
+};
+
+AAN.autoRun = function(){
+	AAC.index = 0;
+	$( AAC.demoSelector ).css('background','url(img/' + AAC.preFix + '01.png)');
+	AAN.run();
+};
+AAN.run = function(){
+	if(AAC.index < AAC.picArray.length){
+		var url = 'url(img/' + AAC.preFix + AAC.picArray[AAC.index].SN + '.png)';
+		$( AAC.demoSelector ).css('background',url);
+		AAC.index++;
+		setTimeout( AAN.run, AAC.speed);
+	}
+};
+
+AAN.prePic = function(){
+	if( --AAC.index < 0  )
+		AAC.index = 0;		
+	var url = 'url(img/' + AAC.preFix + AAC.picArray[0].SN + '.png)';	
+		$( AAC.demoSelector ).css('background', url);	
+};
+AAN.nextPic = function(){
+	if( ++AAC.index >= AAC.picArray.length )
+		AAC.index = 0;		
+	var url = 'url(img/' + AAC.preFix + AAC.picArray[AAC.index].SN + '.png)';	
+		$( AAC.demoSelector ).css('background', url);	
+};
+
+
+

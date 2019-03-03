@@ -1,0 +1,2 @@
+NUM_OF_SAMPLES,SelectSort,BubbleSort,InsertSort,QuickSort,MergeSort,TreeSort,HeapSort,RadixSort
+32768,1.207,3.600,

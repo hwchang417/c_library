@@ -1,0 +1,72 @@
+﻿/** Basic Init **/
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td { margin: 0; padding: 0; -webkit-text-size-adjust:none; }
+body {font-family: arial, helvetica, clean, sans-serif; }	/** Font Size Init **/
+div, dl, dt, dd, ul, ol, li, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td { font-size: 13px; letter-spacing: 1px; word-spacing: 2px;}
+a img { border: 0;}			/** For IE Bug **/
+
+
+/** Web Architecture **/		
+#innerWrapper { margin: auto; width: 1000px; overflow: hidden;}
+#innerWrapper .head {height: 84px;}
+#mainPanel {border: 1px solid gray; overflow: hidden; z-index: 1; }
+#footer { margin-top: 20px; border-top: 1px solid DodgerBlue; font-family: Tahoma; color: RoyalBlue; height: 20px; text-align: center;
+	background: -moz-linear-gradient(top,  rgba(244,244,244,0) 0%, rgba(0,108,191,0.65) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(244,244,244,0)), color-stop(100%,rgba(0,108,191,0.65))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(244,244,244,0) 0%,rgba(0,108,191,0.65) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(244,244,244,0) 0%,rgba(0,108,191,0.65) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(244,244,244,0) 0%,rgba(0,108,191,0.65) 100%); /* IE10+ */
+    background: linear-gradient(top,  rgba(244,244,244,0) 0%,rgba(0,108,191,0.65) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00f4f4f4', endColorstr='#a6006cbf',GradientType=0 ); /* IE6-9 */
+}
+
+
+
+
+/** Adsense **/
+#ads    {  z-index: 1; width: 160px; height: 600px; float: right; /*position: relative; */right: 0px;}
+.hAdsense { width: 730px;}
+#googlePlusAdd1 { float: right; margin: 5px 0;}
+
+
+
+/** Head **/
+#logoImg    { float: left; margin-bottom: 10px; height: 47px; width: 258px;}
+#yehyehGMail {float:right; margin-top: 20px; text-decoration: none; }
+#menuUL { border: 1px solid gray; border-bottom: none; width: 998px; background: #6db3f2; 
+background: -moz-linear-gradient(top,  rgba(244,244,244,0) 0%, rgba(0,108,191,0.65) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(244,244,244,0)), color-stop(100%,rgba(0,108,191,0.65))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(244,244,244,0) 0%,rgba(0,108,191,0.65) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(244,244,244,0) 0%,rgba(0,108,191,0.65) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(244,244,244,0) 0%,rgba(0,108,191,0.65) 100%); /* IE10+ */
+    background: linear-gradient(top,  rgba(244,244,244,0) 0%,rgba(0,108,191,0.65) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00f4f4f4', endColorstr='#a6006cbf',GradientType=0 ); /* IE6-9 */ 
+}
+#menuUL>li.word2 { width: 75px;}
+#menuUL>li.word4 { width: 100px;}
+
+
+/** To Top Link **/
+.content .topHR { border-bottom: solid 2px #CDE5FF; text-align: right; }
+.content .aBackToTop { display: block; color: #5e8eab; border-bottom: dotted 1px #5e8eab; text-align: right; margin-top: 30px; padding-left:3px; text-decoration: none; }
+.content .aBackToTop:hover { background: #9F9; }
+.content .aBackToTop:visited { color: #5e8eab; text-decoration:none; }
+.content .top { color: #5e8eab; border-bottom: dotted 1px #5e8eab; text-align: right; padding-top: 30px; }
+.content .top a { color: #5e8eab; padding-left:3px; text-decoration: none; }
+
+/** 上一頁, 下一頁 Satrt **/
+.content .PreNextPageLink { display: block; height: 20px; color: RoyalBlue ; margin-top: 30px; padding-left:3px; text-decoration: none; }
+.content .PrePageLink { float: left; color: RoyalBlue;}
+.content .PrePageLink:visited {color: RoyalBlue;}
+.content .NextPageLink {float: right; color: RoyalBlue;}
+.content .NextPageLink:visited {color: RoyalBlue;}
+
+
+
+
+/** Other **/
+.clear  { clear:both; /* height:1px; overflow:hidden; */}
+
+/* 
+#SiteMapTable  { width:500px; margin: 0px auto; }
+*/

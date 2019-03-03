@@ -1,0 +1,35 @@
+# depslib dependency file v1.0
+1551616411 source:d:\notebook\interview\collection\c library\set\set.c
+	<stdio.h>
+	<stdlib.h>
+	<assert.h>
+	"set.h"
+
+1551579364 d:\notebook\interview\collection\c library\set\set.h
+	"../tree/tree.h"
+
+1551579848 d:\notebook\interview\collection\c library\tree\tree.h
+	"../common/debug.h"
+
+1528881182 d:\notebook\interview\collection\c library\common\debug.h
+	<stdio.h>
+	<stdio.h>
+	<stdlib.h>
+
+1551621284 source:d:\notebook\interview\collection\c library\set\main.c
+	<stdio.h>
+	<stdlib.h>
+	<assert.h>
+	"set.h"
+
+1551621258 source:d:\notebook\interview\collection\c library\tree\tree.c
+	<stdio.h>
+	<stdlib.h>
+	<assert.h>
+	"../common/debug.h"
+	"tree.h"
+
+1551611033 source:d:\notebook\interview\collection\c library\tree\main.c
+	"../common/debug.h"
+	"tree.h"
+

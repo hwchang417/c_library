@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1529635804 source:c:\users\evan\desktop\interview\collection\library\hash\main.c
+	<stdio.h>
+	"hash.h"
+
+1529635725 c:\users\evan\desktop\interview\collection\library\hash\hash.h
+	"../common/debug.h"
+
+1528881182 c:\users\evan\desktop\interview\collection\library\common\debug.h
+	<stdio.h>
+	<stdio.h>
+	<stdlib.h>
+
+1529636112 source:c:\users\evan\desktop\interview\collection\library\hash\hash.c
+	<stdlib.h>
+	"hash.h"
+

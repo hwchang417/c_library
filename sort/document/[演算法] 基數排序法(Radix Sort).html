@@ -1,0 +1,1269 @@
+
+<!-- saved from url=(0064)http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php -->
+<html xmlns="http://www.w3.org/1999/xhtml" class="gr__notepad_yehyeh_net"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body data-gr-c-s-loaded="true">﻿
+
+
+
+<title>[演算法] 基數排序法(Radix Sort)</title>
+<meta name="description" content="演算法(Algorithm) - 基數排序法(Radix Sort)介紹">
+<meta name="keywords" content="">
+<meta name="type" content="Tutorial">
+
+
+<meta http-equiv="Content-Language" content="zh-tw">
+
+<meta name="robots" content="all">
+<meta name="author" content="yehyeh">
+
+<link rev="yehyeh" href="mailto:yehyeh@gmail.com">
+<link rev="made" href="http://notepad.yehyeh.net/">
+<link rel="shortcut icon" href="http://notepad.yehyeh.net/img/favicon.ico">
+
+<link href="./[演算法] 基數排序法(Radix Sort)_files/superfish.css" rel="stylesheet" type="text/css"><link href="./[演算法] 基數排序法(Radix Sort)_files/main.css" rel="stylesheet" type="text/css"><link href="./[演算法] 基數排序法(Radix Sort)_files/prettify.css" rel="stylesheet" type="text/css"><link href="./[演算法] 基數排序法(Radix Sort)_files/jquery-ui-1.9.2.custom.css" rel="stylesheet" type="text/css"><link href="./[演算法] 基數排序法(Radix Sort)_files/doc.css" rel="stylesheet" type="text/css"><link href="./[演算法] 基數排序法(Radix Sort)_files/Algorithm.css" rel="stylesheet" type="text/css"><script src="./[演算法] 基數排序法(Radix Sort)_files/cb=gapi.loaded_1" async=""></script><script src="./[演算法] 基數排序法(Radix Sort)_files/cb=gapi(1).loaded_0" async=""></script><script type="text/javascript" async="" src="./[演算法] 基數排序法(Radix Sort)_files/ga.js.下載"></script><script type="text/javascript" async="" src="./[演算法] 基數排序法(Radix Sort)_files/plusone.js.下載" gapi_processed="true"></script><script src="./[演算法] 基數排序法(Radix Sort)_files/jquery.js.下載" type="text/javascript"></script><script src="./[演算法] 基數排序法(Radix Sort)_files/main.js.下載" type="text/javascript"></script><script src="./[演算法] 基數排序法(Radix Sort)_files/hoverIntent.js.下載" type="text/javascript"></script><script src="./[演算法] 基數排序法(Radix Sort)_files/jquery.bgiframe.min.js.下載" type="text/javascript"></script><script src="./[演算法] 基數排序法(Radix Sort)_files/superfish.js.下載" type="text/javascript"></script><script src="./[演算法] 基數排序法(Radix Sort)_files/jquery.corner.js.下載" type="text/javascript"></script><script src="./[演算法] 基數排序法(Radix Sort)_files/prettify.js.下載" type="text/javascript"></script><script src="./[演算法] 基數排序法(Radix Sort)_files/jquery-ui-1.9.2.custom.min.js.下載" type="text/javascript"></script><script src="./[演算法] 基數排序法(Radix Sort)_files/tutorialCommon.js.下載" type="text/javascript"></script><script src="./[演算法] 基數排序法(Radix Sort)_files/Algorithm.js.下載" type="text/javascript"></script>
+
+
+<div id="wrapper">
+<div id="innerWrapper">
+<div class="head">
+<img id="logoImg" src="./[演算法] 基數排序法(Radix Sort)_files/Logo3.png" alt="YehYeh\&#39;s Notepad">
+<a id="yehyehGMail" href="mailto:yehyeh@gmail.com">	
+	<img src="./[演算法] 基數排序法(Radix Sort)_files/yehyehGmail.png" alt="yehyeh@gmail.com">
+</a>
+
+﻿
+<ul id="menuUL" class="sf-menu sf-shadow sf-js-enabled">
+    <li class="word2"><a href="http://notepad.yehyeh.net/index.php">首頁</a></li>
+    <li class="word4"><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">網頁設計<span class="sf-sub-indicator"> »</span></a>
+        <ul style="display: none; visibility: hidden;">
+            <li><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">HTML<span class="sf-sub-indicator"> »</span></a>
+                <ul style="display: none; visibility: hidden;">
+                    <li><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">HTML介紹<span class="sf-sub-indicator"> »</span></a>
+                        <ul style="display: none; visibility: hidden;">
+                            <li><a title="HTML" href="http://notepad.yehyeh.net/Content/WebDesign/HTML/01/1.php">概念&amp;元素</a></li>
+                            <li><a title="HTML" href="http://notepad.yehyeh.net/Content/WebDesign/HTML/01/2.php">HTML的架構</a></li>
+                            <li><a title="HTML" href="http://notepad.yehyeh.net/Content/WebDesign/HTML/01/3.php">第一個HTML</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">轉義字元<span class="sf-sub-indicator"> »</span></a>
+                        <ul style="display: none; visibility: hidden;">
+                            <li><a title="HTML" href="http://notepad.yehyeh.net/Content/WebDesign/HTML/02/1.php">轉義字符簡介</a></li>
+                            <li><a title="HTML" href="http://notepad.yehyeh.net/Content/WebDesign/HTML/02/2.php">一般字元</a></li>
+                            <li><a title="HTML" href="http://notepad.yehyeh.net/Content/WebDesign/HTML/02/3.php">箭號</a></li>
+                            <li><a title="HTML" href="http://notepad.yehyeh.net/Content/WebDesign/HTML/02/4.php">控制字元</a></li>
+                            <li><a title="HTML" href="http://notepad.yehyeh.net/Content/WebDesign/HTML/02/5.php">希臘符號</a></li>
+                            <li><a title="HTML" href="http://notepad.yehyeh.net/Content/WebDesign/HTML/02/6.php">拉丁擴充字元</a></li>
+                            <li><a title="HTML" href="http://notepad.yehyeh.net/Content/WebDesign/HTML/02/7.php">數學運算符號</a></li>
+                            <li><a title="HTML" href="http://notepad.yehyeh.net/Content/WebDesign/HTML/02/8.php">標點符號</a></li>
+                        </ul></li>
+                </ul></li>
+            <li><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">CSS<span class="sf-sub-indicator"> »</span></a>
+                <ul style="display: none; visibility: hidden;">
+                    <li><a title="CSS" href="http://notepad.yehyeh.net/Content/WebDesign/CSS/priority/1.php">樣式優先權</a></li>
+                    <li><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">選擇器<span class="sf-sub-indicator"> »</span></a>
+                        <ul style="display: none; visibility: hidden;">
+                            <li><a title="CSS" href="http://notepad.yehyeh.net/Content/WebDesign/CSS/selector/1.php">基礎選擇器</a></li>
+                            <li><a title="CSS" href="http://notepad.yehyeh.net/Content/WebDesign/CSS/selector/2.php">屬性選擇器</a></li>
+                            <li><a title="CSS" href="http://notepad.yehyeh.net/Content/WebDesign/CSS/selector/3.php">虛擬選擇器</a></li>
+                        </ul>
+					</li>
+                    <li><a title="CSS" href="http://notepad.yehyeh.net/Content/WebDesign/CSS/reset/reset.php">Reset CSS</a></li>
+					<li><a title="CSS" href="http://notepad.yehyeh.net/Content/WebDesign/CSS/colorTable/colorPicker.php">色碼表 &amp; 選擇器</a></li>    
+					<li><a title="CSS" href="http://notepad.yehyeh.net/Content/WebDesign/CSS/font/font.php">安全字型</a></li>
+					<li><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">IE<span class="sf-sub-indicator"> »</span></a>
+                        <ul style="display: none; visibility: hidden;">
+                            <li><a title="CSS" href="http://notepad.yehyeh.net/Content/WebDesign/CSS/IE/hasLayout.php">Has Layout概述</a></li>
+                        </ul>
+					</li>
+                </ul></li>
+            <li><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">JavaScript<span class="sf-sub-indicator"> »</span></a>
+                <ul style="display: none; visibility: hidden;">
+                    <li><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">ECMA-262<span class="sf-sub-indicator"> »</span></a>
+                        <ul style="display: none; visibility: hidden;">
+                            <li><a title="JavaScript" href="http://notepad.yehyeh.net/Content/WebDesign/Javascript/ECMA/Core/JavaScriptCore.php">JavaScript Core</a></li>
+                            <li><a title="JavaScript" href="http://notepad.yehyeh.net/Content/WebDesign/Javascript/ECMA/Function/JavascriptFunction.php">函式(Function)</a></li>
+                        </ul>
+                    </li>
+                    <li><a title="JavaScript" href="http://notepad.yehyeh.net/Content/WebDesign/Javascript/Namespace.php">命名空間</a></li>
+                    <li><a title="JavaScript" href="http://notepad.yehyeh.net/Content/WebDesign/Javascript/Essay/ApplyAndCall.php">Apply &amp; Call</a></li>
+                </ul>
+            </li>
+
+        </ul></li>
+    <li class="word4"><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">程式設計<span class="sf-sub-indicator"> »</span></a>
+        <ul style="display: none; visibility: hidden;">
+            <li><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">C++<span class="sf-sub-indicator"> »</span></a>
+                <ul style="display: none; visibility: hidden;">
+                    <li><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">基本程式架構<span class="sf-sub-indicator"> »</span></a>
+                        <ul style="display: none; visibility: hidden;">
+                            <li><a title="C++" href="http://notepad.yehyeh.net/Content/CPP/CH01/01ProgramArch/1.php">程式檔和標頭檔</a></li>
+                            <li><a title="C++" href="http://notepad.yehyeh.net/Content/CPP/CH01/01ProgramArch/2.php">前置處理指令</a></li>
+                            <li><a title="C++" href="http://notepad.yehyeh.net/Content/CPP/CH01/01ProgramArch/3.php">開發流程</a></li>
+                            <li><a title="C++" href="http://notepad.yehyeh.net/Content/CPP/CH01/01ProgramArch/4.php">程式架構</a></li>
+                            <li><a title="C++" href="http://notepad.yehyeh.net/Content/CPP/CH01/01ProgramArch/5.php">脫逸序列</a></li>
+                            <li><a title="C++" href="http://notepad.yehyeh.net/Content/CPP/CH01/01ProgramArch/6.php">關鍵字</a></li>
+                        </ul></li>
+                    <li><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">變數<span class="sf-sub-indicator"> »</span></a>
+                        <ul style="display: none; visibility: hidden;">
+                            <li><a title="C++" href="http://notepad.yehyeh.net/Content/CPP/CH01/02Variable/1.php">變數說明</a></li>
+                            <li><a title="C++" href="http://notepad.yehyeh.net/Content/CPP/CH01/02Variable/2.php">生命週期與生存空間</a></li>
+                            <li><a title="C++" href="http://notepad.yehyeh.net/Content/CPP/CH01/02Variable/3.php">外部變數</a></li>
+                            <li><a title="C++" href="http://notepad.yehyeh.net/Content/CPP/CH01/02Variable/4.php">暫存器變數</a></li>
+                            <li><a title="C++" href="http://notepad.yehyeh.net/Content/CPP/CH01/02Variable/5.php">volatile修飾詞</a></li>
+                        </ul></li>
+                    <li><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">資料型態<span class="sf-sub-indicator"> »</span></a>
+                        <ul style="display: none; visibility: hidden;">
+                            <li><a title="C++" href="http://notepad.yehyeh.net/Content/CPP/CH01/03DataType/1.php">算術型態</a></li>
+                            <li><a title="C++" href="http://notepad.yehyeh.net/Content/CPP/CH01/03DataType/2.php">資料型態同義字</a></li>
+                            <li><a title="C++" href="http://notepad.yehyeh.net/Content/CPP/CH01/03DataType/3.php">列舉型態</a></li>
+                            <li><a title="C++" href="http://notepad.yehyeh.net/Content/CPP/CH01/03DataType/4.php">型態轉換</a></li>
+                        </ul></li>
+                    <li><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">進階資料型態<span class="sf-sub-indicator"> »</span></a>
+                        <ul style="display: none; visibility: hidden;">
+                            <li><a title="C++" href="http://notepad.yehyeh.net/Content/CPP/CH01/04AdvDataType/1.php">基本陣列</a></li>
+                            <li><a title="C++" href="http://notepad.yehyeh.net/Content/CPP/CH01/04AdvDataType/2.php">字元陣列</a></li>
+                            <li><a title="C++" href="http://notepad.yehyeh.net/Content/CPP/CH01/04AdvDataType/3.php">多維陣列</a></li>
+                            <li><a title="C++" href="http://notepad.yehyeh.net/Content/CPP/CH01/04AdvDataType/4.php">string物件</a></li>
+                        </ul></li>
+                    <li><a title="C++" href="http://notepad.yehyeh.net/Content/CPP/CH01/05Operator/1.php">運算子</a></li>
+                    <li><a title="C++" href="http://notepad.yehyeh.net/Content/CPP/CH01/06Pointer/1.php">指標、指涉器</a></li>
+                </ul></li>
+            <li><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">C#<span class="sf-sub-indicator"> »</span></a>
+                <ul style="display: none; visibility: hidden;">
+                    <li><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">.Net Framework<span class="sf-sub-indicator"> »</span></a>
+                        <ul style="display: none; visibility: hidden;">
+                            <li><a title="C#" href="http://notepad.yehyeh.net/Content/CSharp/CH01/01DotNetFramework/1DotNetFrameworkArch/index.php">.Net Framework架構</a></li>
+                            <li><a title="C#" href="http://notepad.yehyeh.net/Content/CSharp/CH01/01DotNetFramework/2DotNetProgramExec/index.php">.Net開發與執行</a></li>
+                            <li><a title="C#" href="http://notepad.yehyeh.net/Content/CSharp/CH01/01DotNetFramework/3ManagedProgramDevelope/index.php">Managed程式碼</a></li>
+                            <li><a title="C#" href="http://notepad.yehyeh.net/Content/CSharp/CH01/01DotNetFramework/4DeployUnit/index.php">.Net應用程式部署的單位</a></li>
+                        </ul></li>
+                    <li><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">程式架構<span class="sf-sub-indicator"> »</span></a>
+                        <ul style="display: none; visibility: hidden;">
+                            <li><a title="C#" href="http://notepad.yehyeh.net/Content/CSharp/CH01/02ProgramArch/1ProgramArch/index.php">基本程式架構</a></li>
+                            <li><a title="C#" href="http://notepad.yehyeh.net/Content/CSharp/CH01/02ProgramArch/2Token/index.php">語彙基元</a></li>
+                            <li><a title="C#" href="http://notepad.yehyeh.net/Content/CSharp/CH01/02ProgramArch/3BasicMember/index.php">基礎成員</a></li>
+                            <li><a title="C#" href="http://notepad.yehyeh.net/Content/CSharp/CH01/02ProgramArch/4PreprocessorDirective/index.php">前置處理指示詞</a></li>
+                        </ul></li>
+                    <li><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">物件導向<span class="sf-sub-indicator"> »</span></a>
+                        <ul style="display: none; visibility: hidden;">
+                            <li><a title="C#" href="http://notepad.yehyeh.net/Content/CSharp/CH01/03ObjectOrient/1ObjectAndClass/index.php">物件與類別</a></li>
+                            <li><a title="C#" href="http://notepad.yehyeh.net/Content/CSharp/CH01/03ObjectOrient/2ClassMember/index.php">類別成員</a></li>
+                            <li><a title="C#" href="http://notepad.yehyeh.net/Content/CSharp/CH01/03ObjectOrient/3OOCharacter/index.php">物件導向三大特性</a></li>
+                            <li><a title="C#" href="http://notepad.yehyeh.net/Content/CSharp/CH01/03ObjectOrient/4Constructor/index.php">建構函式與解構函式</a></li>
+                            <li><a title="C#" href="http://notepad.yehyeh.net/Content/CSharp/CH01/03ObjectOrient/5thisAndBase/index.php">this和base</a></li>
+                            <li><a title="C#" href="http://notepad.yehyeh.net/Content/CSharp/CH01/03ObjectOrient/6Interface/index.php">介面</a></li>
+                            <li><a title="C#" href="http://notepad.yehyeh.net/Content/CSharp/CH01/03ObjectOrient/7AbstractClass/index.php">抽象類別</a></li>
+                            <li><a title="C#" href="http://notepad.yehyeh.net/Content/CSharp/CH01/03ObjectOrient/8IACompare/index.php">介面與抽象類別的比較</a></li>
+                        </ul></li>
+                    <li><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">命名空間<span class="sf-sub-indicator"> »</span></a>
+                        <ul style="display: none; visibility: hidden;">
+                            <li><a title="C#" href="http://notepad.yehyeh.net/Content/CSharp/CH01/04Namespace/1CompilationUnit/index.php">編譯單位</a></li>
+                            <li><a title="C#" href="http://notepad.yehyeh.net/Content/CSharp/CH01/04Namespace/2NameSpace/index.php">命名空間</a></li>
+                            <li><a title="C#" href="http://notepad.yehyeh.net/Content/CSharp/CH01/04Namespace/3ExternAlias/index.php">外部別名</a></li>
+                            <li><a title="C#" href="http://notepad.yehyeh.net/Content/CSharp/CH01/04Namespace/4Directives/index.php">using命名空間指示詞</a></li>
+                            <li><a title="C#" href="http://notepad.yehyeh.net/Content/CSharp/CH01/04Namespace/5AliasDirectives/index.php">using別名指示詞</a></li>
+                            <li><a title="C#" href="http://notepad.yehyeh.net/Content/CSharp/CH01/04Namespace/6QualifiedAlias/index.php">命名空間別名限定詞</a></li>
+                        </ul></li>
+                    <li><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">資料型別<span class="sf-sub-indicator"> »</span></a>
+                        <ul style="display: none; visibility: hidden;">
+                            <li><a title="C#" href="http://notepad.yehyeh.net/Content/CSharp/CH01/05DataType/1CTS/index.php">通用型別系統</a></li>
+                            <li><a title="C#" href="http://notepad.yehyeh.net/Content/CSharp/CH01/05DataType/2Variable/index.php">變數</a></li>
+                            <li><a title="C#" href="http://notepad.yehyeh.net/Content/CSharp/CH01/05DataType/3DeclareAndInit/index.php">變數宣告及初使化</a></li>
+                            <li><a title="C#" href="http://notepad.yehyeh.net/Content/CSharp/CH01/05DataType/4LifeCycle/index.php">生命週期</a></li>
+                            <li><a title="C#" href="http://notepad.yehyeh.net/Content/CSharp/CH01/05DataType/5BoxingAndUnboxing/index.php">Boxing &amp; Unboxing</a></li>
+                        </ul></li>
+                </ul></li>
+            <li><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">資料結構<span class="sf-sub-indicator"> »</span></a>
+                <ul style="display: none; visibility: hidden;">
+                    <li><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">資算法與時間複雜度<span class="sf-sub-indicator"> »</span></a>
+                        <ul style="display: none; visibility: hidden;">
+                            <li><a title="資料結構" href="http://notepad.yehyeh.net/Content/DS/CH01/1.php">資料結構概念</a></li>
+                            <li><a title="資料結構" href="http://notepad.yehyeh.net/Content/DS/CH01/2.php">演算法評估</a></li>
+                            <li><a title="資料結構" href="http://notepad.yehyeh.net/Content/DS/CH01/3.php">漸近符號</a></li>
+                            <li><a title="資料結構" href="http://notepad.yehyeh.net/Content/DS/CH01/4.php">資料型態</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">基礎遞迴<span class="sf-sub-indicator"> »</span></a>
+                        <ul style="display: none; visibility: hidden;">
+                            <li><a title="資料結構" href="http://notepad.yehyeh.net/Content/DS/CH02/1.php">遞迴演算法</a></li>
+                            <li><a title="資料結構" href="http://notepad.yehyeh.net/Content/DS/CH02/2.php">階乘演算法</a></li>
+                            <li><a title="資料結構" href="http://notepad.yehyeh.net/Content/DS/CH02/3.php">費伯那西數</a></li>
+                            <li><a title="資料結構" href="http://notepad.yehyeh.net/Content/DS/CH02/4.php">河內塔</a></li>
+                            <li><a title="資料結構" href="http://notepad.yehyeh.net/Content/DS/CH02/5.php">最大公因數</a></li>
+                            <li><a title="資料結構" href="http://notepad.yehyeh.net/Content/DS/CH02/6.php">二項式係數</a></li>
+                            <li><a title="資料結構" href="http://notepad.yehyeh.net/Content/DS/CH02/7.php">艾克曼函數</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">陣列<span class="sf-sub-indicator"> »</span></a>
+                        <ul style="display: none; visibility: hidden;">
+                            <li><a title="資料結構" href="http://notepad.yehyeh.net/Content/DS/CH03/1.php">陣列</a></li>
+                            <li><a title="資料結構" href="http://notepad.yehyeh.net/Content/DS/CH03/2.php">一維陣列</a></li>
+                            <li><a title="資料結構" href="http://notepad.yehyeh.net/Content/DS/CH03/3.php">二維陣列</a></li>
+                            <li><a title="資料結構" href="http://notepad.yehyeh.net/Content/DS/CH03/4.php">三維陣列</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">鏈結串列<span class="sf-sub-indicator"> »</span></a>
+                        <ul style="display: none; visibility: hidden;">
+                            <li><a title="資料結構" href="http://notepad.yehyeh.net/Content/DS/CH04/1.php">鏈結串列</a></li>
+                            <li><a title="資料結構" href="http://notepad.yehyeh.net/Content/DS/CH04/2.php">儲存池</a></li>
+                            <li><a title="資料結構" href="http://notepad.yehyeh.net/Content/DS/CH04/3.php">單向鏈結串列</a></li>                            
+                        </ul>
+                    </li>                    
+                </ul>
+            </li>
+			<li><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">演算法<span class="sf-sub-indicator"> »</span></a>
+                <ul style="display: none; visibility: hidden;">
+                    <li><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">排序(Sort)<span class="sf-sub-indicator"> »</span></a>
+                        <ul style="display: none; visibility: hidden;">
+							<li><a title="演算法" href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Sort.php">排序演算法</a></li>
+                            <li><a title="演算法" href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Selection/1.php">選擇(Selection)排序法</a></li>
+							<li><a title="演算法" href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Insertion/1.php">插入(Insertion)排序法</a></li>
+							<li><a title="演算法" href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Bubble/1.php">氣泡(Bubble)排序法</a></li>
+							<li><a title="演算法" href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Shell/Shell.php">謝耳(Shell)排序法</a></li>
+							<li><a title="演算法" href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Shaker/Shaker.php">搖晃(Shaker)排序法</a></li>
+							<li><a title="演算法" href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Quick/Quick.php">快速(Quick)排序法</a></li>
+							<li><a title="演算法" href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Merge/Merge.php">合併(Merge)排序法</a></li>
+							<li><a title="演算法" href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Heap/Heap.php">堆積(Heap)排序法</a></li>
+							<li><a title="演算法" href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php">基數(Radix)排序法</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">搜尋(Search)<span class="sf-sub-indicator"> »</span></a>
+                        <ul style="display: none; visibility: hidden;">
+							<li><a title="演算法" href="http://notepad.yehyeh.net/Content/Algorithm/Search/LinearSearch/LinearSearch.php">線性(Linear)搜尋法</a></li>
+                            <li><a title="演算法" href="http://notepad.yehyeh.net/Content/Algorithm/Search/BinarySearch/BinarySearch.php">二分(Binary)搜尋法</a></li>
+                            <li><a title="演算法" href="http://notepad.yehyeh.net/Content/Algorithm/Search/InterpolationSearch/InterpolationSearch.php">插補(Interpolation)搜尋法</a></li>							
+                        </ul>
+                    </li>
+					<li><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">精典演算法<span class="sf-sub-indicator"> »</span></a>
+						<ul style="display: none; visibility: hidden;">
+							<li><a title="演算法" href="http://notepad.yehyeh.net/Content/Algorithm/Famous/KnightTour/KnightTour.php">騎士走棋盤</a></li>
+                        </ul>
+					</li>
+				</ul>
+			</li>
+			<li><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">軟體工程<span class="sf-sub-indicator"> »</span></a>
+				<ul style="display: none; visibility: hidden;">
+					<li><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">Subversion<span class="sf-sub-indicator"> »</span></a>
+						<ul style="display: none; visibility: hidden;">
+							<li><a title="SVN" href="http://notepad.yehyeh.net/Content/SoftwareEnginerring/Subversion/1.php">概述</a></li>
+							<li><a title="SVN" href="http://notepad.yehyeh.net/Content/SoftwareEnginerring/Subversion/2.php">檔案庫</a></li>
+							<li><a title="SVN" href="http://notepad.yehyeh.net/Content/SoftwareEnginerring/Subversion/3.php">建立與導出專案</a></li>
+							<li><a title="SVN" href="http://notepad.yehyeh.net/Content/SoftwareEnginerring/Subversion/4.php">工作副本 &amp; 版本號碼</a></li>
+							<li><a title="SVN" href="http://notepad.yehyeh.net/Content/SoftwareEnginerring/Subversion/5.php">更新 &amp; 提交 &amp; 鎖定</a></li>
+							<li><a title="SVN" href="http://notepad.yehyeh.net/Content/SoftwareEnginerring/Subversion/6.php">衝突 &amp; 合併 &amp; 還原</a></li>
+							<li><a title="SVN" href="http://notepad.yehyeh.net/Content/SoftwareEnginerring/Subversion/7.php">屬性 &amp; 外部定義</a></li>
+							<li><a title="SVN" href="http://notepad.yehyeh.net/Content/SoftwareEnginerring/Subversion/8.php">檔案庫匯入/匯出 &amp; 備份</a></li>
+							<li><a title="SVN" href="http://notepad.yehyeh.net/Content/SoftwareEnginerring/Subversion/9.php">勾子(Hook)</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+            <li><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">正則表示式<span class="sf-sub-indicator"> »</span></a>
+                <ul style="display: none; visibility: hidden;">
+                    <li><a title="正則表示式" href="http://notepad.yehyeh.net/Content/Program/RegularExpression/1.php">正則表示式簡介</a></li>
+                    <li><a title="正則表示式" href="http://notepad.yehyeh.net/Content/Program/RegularExpression/2.php">測試工具</a></li>
+                    <li><a title="正則表示式" href="http://notepad.yehyeh.net/Content/Program/RegularExpression/3.php">匹配模式</a></li>
+                    <li><a title="正則表示式" href="http://notepad.yehyeh.net/Content/Program/RegularExpression/4.php">普通字元匹配</a></li>
+                    <li><a title="正則表示式" href="http://notepad.yehyeh.net/Content/Program/RegularExpression/5.php">字元類匹配</a></li>
+                    <li><a title="正則表示式" href="http://notepad.yehyeh.net/Content/Program/RegularExpression/6.php">中介字符</a></li>
+                    <li><a title="正則表示式" href="http://notepad.yehyeh.net/Content/Program/RegularExpression/7.php">字元轉義</a></li>
+                    <li><a title="正則表示式" href="http://notepad.yehyeh.net/Content/Program/RegularExpression/8.php">量符</a></li>
+                    <li><a title="正則表示式" href="http://notepad.yehyeh.net/Content/Program/RegularExpression/9.php">群組與子運算式</a></li>
+                    <li><a title="正則表示式" href="http://notepad.yehyeh.net/Content/Program/RegularExpression/10.php">替代字元</a></li>
+                    <li><a title="正則表示式" href="http://notepad.yehyeh.net/Content/Program/RegularExpression/11.php">註解</a></li>
+                    <li><a title="正則表示式" href="http://notepad.yehyeh.net/Content/Program/RegularExpression/12.php">優先權</a></li>
+                </ul></li>
+            <li><a href="http://notepad.yehyeh.net/Content/Program/ASCII.php">ASCII表</a>
+            </li>
+        </ul></li>
+    <li class="word2"><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">攝影<span class="sf-sub-indicator"> »</span></a>
+        <ul style="display: none; visibility: hidden;">
+            <li><a title="攝影" href="http://notepad.yehyeh.net/Content/Photograph/introduction/1.php">攝影入門</a></li>
+            <li><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">ExposureGuide<span class="sf-sub-indicator"> »</span></a>
+              <ul style="display: none; visibility: hidden;">
+                <li><a title="攝影" href="http://notepad.yehyeh.net/Content/Photograph/ExposureGuide/camera-controls.php">掌控相機</a></li>
+                <li><a title="攝影" href="http://notepad.yehyeh.net/Content/Photograph/ExposureGuide/camera-modes.php">相機的模式</a></li>
+                <li><a title="攝影" href="http://notepad.yehyeh.net/Content/Photograph/ExposureGuide/metering-modes.php">測光模式</a></li>
+                <li><a title="攝影" href="http://notepad.yehyeh.net/Content/Photograph/ExposureGuide/white-balance.php">白光衡</a></li>
+                <li><a title="攝影" href="http://notepad.yehyeh.net/Content/Photograph/ExposureGuide/iso-sensitivity.php">ISO 感光度</a></li>              
+                <li><a title="攝影" href="http://notepad.yehyeh.net/Content/Photograph/ExposureGuide/Exposure.php">瞭解曝光</a></li>
+                <li><a title="攝影" href="http://notepad.yehyeh.net/Content/Photograph/ExposureGuide/resolution.php">解析度</a></li>
+                <li><a title="攝影" href="http://notepad.yehyeh.net/Content/Photograph/ExposureGuide/lens-basics.php">鏡頭基礎</a></li>
+                <li><a title="攝影" href="http://notepad.yehyeh.net/Content/Photograph/ExposureGuide/focusing-basics.php">景深</a></li>
+                <li><a title="攝影" href="http://notepad.yehyeh.net/Content/Photograph/ExposureGuide/focusing-modes.php">自動對焦模式</a></li>
+                <li><a title="攝影" href="http://notepad.yehyeh.net/Content/Photograph/ExposureGuide/lens-filters.php">鏡頭濾鏡</a></li>
+                <li><a title="攝影" href="http://notepad.yehyeh.net/Content/Photograph/ExposureGuide/camera-flash-types.php">閃燈種類</a></li>
+                <li><a title="攝影" href="http://notepad.yehyeh.net/Content/Photograph/ExposureGuide/high-speed-sync-flash.php">高速同步閃燈</a></li>
+                <li><a title="攝影" href="http://notepad.yehyeh.net/Content/Photograph/ExposureGuide/slow-sync-flash.php">低速同步閃燈</a></li>
+                <li><a title="攝影" href="http://notepad.yehyeh.net/Content/Photograph/ExposureGuide/ttl-flash-metering.php">TTL閃燈測光</a></li>
+				<li><a title="攝影" href="http://notepad.yehyeh.net/Content/Photograph/ExposureGuide/lamp-reflectors.php">燈具反光罩</a></li>
+              </ul>
+            </li>           
+            <li><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">Panasonic LX7 <span class="sf-sub-indicator"> »</span></a>
+              <ul style="display: none; visibility: hidden;">
+                  <li><a title="攝影" href="http://notepad.yehyeh.net/Content/Photograph/LX7/1.php">開箱</a></li>
+                  <li><a title="攝影" href="http://notepad.yehyeh.net/Content/Photograph/LX7/2.php">亂亂拍</a></li>
+              </ul>     
+            </li>   
+         </ul>
+    </li>  
+    <li class="word2"><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">食譜<span class="sf-sub-indicator"> »</span></a>
+        <ul style="display: none; visibility: hidden;">
+			<li><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">廚具<span class="sf-sub-indicator"> »</span></a>
+                <ul style="display: none; visibility: hidden;">
+                    <li><a title="廚具" href="http://notepad.yehyeh.net/Content/Cook/Cooker/WMF/CookerShopping.php">WMF 壓力鍋 &amp; 湯鍋開箱</a></li>
+					<li><a title="廚具" href="http://notepad.yehyeh.net/Content/Cook/Cooker/WMF/PressureCooker.php">WMF壓力鍋中文說明書</a></li>
+                </ul> 
+            </li>		
+            <li><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">魚類<span class="sf-sub-indicator"> »</span></a>
+                <ul style="display: none; visibility: hidden;">
+                    <li><a title="食譜" href="http://notepad.yehyeh.net/Content/Cook/Fish/Bass/Bass.php">香煎鱸魚</a></li>
+                </ul>                
+            </li>
+            <li><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">蔬菜類<span class="sf-sub-indicator"> »</span></a>
+                <ul style="display: none; visibility: hidden;">
+                    <li><a title="食譜" href="http://notepad.yehyeh.net/Content/Cook/Potato/MashedPotato/MashedPotato.php">馬鈴薯泥</a></li>
+                </ul>
+            </li>
+            <li><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">米飯類<span class="sf-sub-indicator"> »</span></a>
+                <ul style="display: none; visibility: hidden;">
+                    <li><a title="食譜" href="http://notepad.yehyeh.net/Content/Cook/Rice/GlutinousOilRice/GingerChicken/GingerChicken.php">薑母雞肉麻油飯</a></li>
+                </ul>
+            </li>
+            <li><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">湯類<span class="sf-sub-indicator"> »</span></a>
+                <ul style="display: none; visibility: hidden;">
+                    <li><a title="食譜" href="http://notepad.yehyeh.net/Content/Cook/Soup/SoupStock/KelpKatsuobushi/KelpKatsuobushiSoupStock.php">昆布柴魚高湯</a></li>
+					<li><a title="食譜" href="http://notepad.yehyeh.net/Content/Cook/Soup/ShiQuanDaBuTang/ShiQuanDaBuTang.php">十全大補雞肉湯</a></li>
+                </ul>
+            </li>
+			<li><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">甜點<span class="sf-sub-indicator"> »</span></a>
+                <ul style="display: none; visibility: hidden;">
+                    <li><a title="食譜" href="http://notepad.yehyeh.net/Content/Cook/Soup/RedBeanSoup/RedBeanSoup.php">紅豆湯</a></li>
+                </ul>
+            </li>
+        </ul>
+    </li>             
+    <li class="word2"><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">玩樂<span class="sf-sub-indicator"> »</span></a>
+        <ul style="display: none; visibility: hidden;">
+            <li><a title="行程規劃" href="http://notepad.yehyeh.net/Content/travel/index.php">行程規劃</a>
+            </li>
+            <li><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">國外<span class="sf-sub-indicator"> »</span></a>
+                <ul style="display: none; visibility: hidden;">
+                    <li><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">德國<span class="sf-sub-indicator"> »</span></a>
+                        <ul style="display: none; visibility: hidden;">
+                            <li><a title="德國" href="http://notepad.yehyeh.net/Content/travel/Foriegn/Germany/01.php">出國之前</a></li>
+                            <li><a title="德國" href="http://notepad.yehyeh.net/Content/travel/Foriegn/Germany/02.php">敗家指南</a></li>
+                            <li><a title="德國" href="http://notepad.yehyeh.net/Content/travel/Foriegn/Germany/03.php">Day1</a></li>
+                        </ul></li>
+                </ul></li>
+        </ul>
+    </li>
+    <li class="word2"><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">股票<span class="sf-sub-indicator"> »</span></a>
+        <ul style="display: none; visibility: hidden;">
+            <li><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">2012年3月<span class="sf-sub-indicator"> »</span></a>
+                <ul style="display: none; visibility: hidden;">
+                    <li><a title="股票" href="http://notepad.yehyeh.net/Content/Stock/201203/2012_03_12.htm">2012/03/12</a></li>
+                    <li><a title="股票" href="http://notepad.yehyeh.net/Content/Stock/201203/2012_03_13.php">2012/03/13</a></li>
+                    <li><a title="股票" href="http://notepad.yehyeh.net/Content/Stock/201203/2012_03_14.php">2012/03/14</a></li>
+                    <li><a title="股票" href="http://notepad.yehyeh.net/Content/Stock/201203/2012_03_15.php">2012/03/15</a></li>
+                    <li><a title="股票" href="http://notepad.yehyeh.net/Content/Stock/201203/2012_03_16.php">2012/03/16</a></li>
+                    <li><a title="股票" href="http://notepad.yehyeh.net/Content/Stock/201203/2012_03_19.php">2012/03/19</a></li>
+                    <li><a title="股票" href="http://notepad.yehyeh.net/Content/Stock/201203/2012_03_20.php">2012/03/20</a></li>
+                    <li><a title="股票" href="http://notepad.yehyeh.net/Content/Stock/201203/2012_03_21.php">2012/03/21</a></li>
+                    <li><a title="股票" href="http://notepad.yehyeh.net/Content/Stock/201203/2012_03_22.php">2012/03/22</a></li>
+                    <li><a title="股票" href="http://notepad.yehyeh.net/Content/Stock/201203/2012_03_23.php">2012/03/23</a></li>
+                    <li><a title="股票" href="http://notepad.yehyeh.net/Content/Stock/201203/2012_03_26.php">2012/03/26</a></li>
+                    <li><a title="股票" href="http://notepad.yehyeh.net/Content/Stock/201203/2012_03_27.php">2012/03/27</a></li>
+                    <li><a title="股票" href="http://notepad.yehyeh.net/Content/Stock/201203/2012_03_28.php">2012/03/28</a></li>
+                    <li><a title="股票" href="http://notepad.yehyeh.net/Content/Stock/201203/2012_03_29.php">2012/03/29</a></li>
+                    <li><a title="股票" href="http://notepad.yehyeh.net/Content/Stock/201203/2012_03_30.php">2012/03/30</a></li>
+                </ul></li>
+            <li><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">2012年4月<span class="sf-sub-indicator"> »</span></a>
+                <ul style="display: none; visibility: hidden;">
+                    <li><a title="股票" href="http://notepad.yehyeh.net/Content/Stock/201204/2012_04_02.php">2012/04/02</a></li>
+                    <li><a title="股票" href="http://notepad.yehyeh.net/Content/Stock/201204/2012_04_03.php">2012/04/03</a></li>
+                    <li><a title="股票" href="http://notepad.yehyeh.net/Content/Stock/201204/2012_04_05.php">2012/04/05</a></li>
+                    <li><a title="股票" href="http://notepad.yehyeh.net/Content/Stock/201204/2012_04_06.php">2012/04/06</a></li>
+                    <li><a title="股票" href="http://notepad.yehyeh.net/Content/Stock/201204/2012_04_09.php">2012/04/09</a></li>
+                    <li><a title="股票" href="http://notepad.yehyeh.net/Content/Stock/201204/2012_04_10.php">2012/04/10</a></li>
+                    <li><a title="股票" href="http://notepad.yehyeh.net/Content/Stock/201204/2012_04_11.php">2012/04/11</a></li>
+                    <li><a title="股票" href="http://notepad.yehyeh.net/Content/Stock/201204/2012_04_12.php">2012/04/12</a></li>
+                    <li><a title="股票" href="http://notepad.yehyeh.net/Content/Stock/201204/2012_04_13.php">2012/04/13</a></li>
+                    <li><a title="股票" href="http://notepad.yehyeh.net/Content/Stock/201204/2012_04_16.php">2012/04/16</a></li>
+                    <li><a title="股票" href="http://notepad.yehyeh.net/Content/Stock/201204/2012_04_17.php">2012/04/17</a></li>
+                    <li><a title="股票" href="http://notepad.yehyeh.net/Content/Stock/201204/2012_04_18.php">2012/04/18</a></li>
+                    <li><a title="股票" href="http://notepad.yehyeh.net/Content/Stock/201204/2012_04_19.php">2012/04/19</a></li>
+                    <li><a title="股票" href="http://notepad.yehyeh.net/Content/Stock/201204/2012_04_20.php">2012/04/20</a></li>
+                    <li><a title="股票" href="http://notepad.yehyeh.net/Content/Stock/201204/2012_04_23.php">2012/04/23</a></li>
+                    <li><a title="股票" href="http://notepad.yehyeh.net/Content/Stock/201204/2012_04_24.php">2012/04/24</a></li>
+                    <li><a title="股票" href="http://notepad.yehyeh.net/Content/Stock/201204/2012_04_25.php">2012/04/25</a></li>
+                    <li><a title="股票" href="http://notepad.yehyeh.net/Content/Stock/201204/2012_04_26.php">2012/04/25</a></li>
+                    <li><a title="股票" href="http://notepad.yehyeh.net/Content/Stock/201204/2012_04_27.php">2012/04/25</a></li>
+                    <li><a title="股票" href="http://notepad.yehyeh.net/Content/Stock/201204/2012_04_30.php">2012/04/25</a></li>
+                </ul>
+            </li>
+            <li><a href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#" class="sf-with-ul">2012年5月<span class="sf-sub-indicator"> »</span></a>
+                <ul style="display: none; visibility: hidden;">
+                    <li><a title="股票" href="http://notepad.yehyeh.net/Content/Stock/201205/2012_05_02.php">2012/05/02</a></li>
+                    <li><a title="股票" href="http://notepad.yehyeh.net/Content/Stock/201205/2012_05_03.php">2012/05/03</a></li>
+                    <li><a title="股票" href="http://notepad.yehyeh.net/Content/Stock/201205/2012_05_04.php">2012/05/04</a></li>
+                    <li><a title="股票" href="http://notepad.yehyeh.net/Content/Stock/201205/2012_05_07.php">2012/05/07</a></li>
+                    <li><a title="股票" href="http://notepad.yehyeh.net/Content/Stock/201205/2012_05_09.php">2012/05/09</a></li>
+                    <li><a title="股票" href="http://notepad.yehyeh.net/Content/Stock/201205/2012_05_10.php">2012/05/10</a></li>
+                    <li><a title="股票" href="http://notepad.yehyeh.net/Content/Stock/201205/2012_05_11.php">2012/05/11</a></li>
+                    <li><a title="股票" href="http://notepad.yehyeh.net/Content/Stock/201205/2012_05_14.php">2012/05/14</a></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+</div>
+<div class="clear"></div>			
+<div id="mainPanel">
+
+<div class="hAdsense">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-7169356158453069";
+/* 橫廣告 */
+google_ad_slot = "4222125535";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="./[演算法] 基數排序法(Radix Sort)_files/f.txt">
+</script>
+</div><div id="ads">
+	<script type="text/javascript"><!--
+	google_ad_client = "ca-pub-7169356158453069";
+	/* blog.yehyeh.net */
+	google_ad_slot = "1969319365";
+	google_ad_width = 160;
+	google_ad_height = 600;
+	//-->
+	</script>
+
+	<script type="text/javascript" src="./[演算法] 基數排序法(Radix Sort)_files/f.txt">
+	</script>
+</div><div class="content">
+<h1 id="top">[演算法<span class="hide">(Algorithm)</span>] 基數排序(Radix Sort)<div id="googlePlusAdd1">
+<!-- 將此標記放在您想要顯示 +1 按鈕的位置 -->
+<div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 38px; height: 24px;"><iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 38px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 24px;" tabindex="0" vspace="0" width="100%" id="I0_1551456098860" name="I0_1551456098860" src="./[演算法] 基數排序法(Radix Sort)_files/fastbutton.html" data-gapiattached="true" title="G+"></iframe></div>
+
+<!-- 將此顯示呼叫 (render call) 放在適當位置 -->
+<script type="text/javascript">
+window.___gcfg = {lang: 'zh-TW'};
+
+(function() {
+var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+po.src = 'https://apis.google.com/js/plusone.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+})();
+</script>
+</div>
+</h1>
+
+<h2 id="section1"></h2>
+<ul>
+	<li><dfn>基數排序</dfn>
+		<ul>
+			<li>又叫<strong>基底排序</strong>、<strong>Bin Sort</strong>、<strong>Bucket Sort</strong></li>
+			<li>是一種<strong>分配式排序(Distribution Sort)</strong></li>
+			<li>可以<strong>多鍵值排序</strong>
+				<ul>
+					<li><span class="ex"><span class="exPrefix">範例：</span></span>兩個鍵值：(1,2), (2,2), (3,1),...</li>
+					<li><span class="ex"><span class="exPrefix">範例：</span></span>撲克牌(花色、數值)：(♠7), (<span class="red">♥</span>7), (♣6), (<span class="red">♦</span>3)</li>
+				</ul>
+			</li>
+			<li>只有一個鍵值時，可以利用<strong>分解鍵值</strong>來進行基數排序</li>
+			<li>將<strong>數值切割</strong>以進行排序
+				<ul>
+					<li><span class="ex"><span class="exPrefix">範例：</span>92 = 9, 2</span></li>
+					<li><span class="ex"><span class="exPrefix">範例：</span>173 = 1, 7, 3</span></li>
+				</ul>
+			</li>
+			<li>利用<strong>桶子(Bucket)</strong>來分類</li>
+			<li>以r為<strong>基底(Base)</strong>時，需準備r個桶子 <span class="arr"> ⇒ </span> 數值時，基底即為<strong>進制</strong>
+				<ul><li><span class="ex"><span class="exPrefix">範例：</span></span>排序10進位數字，需10個桶子</li></ul>
+			</li>
+			<li>資料的位數即為執行的回合數
+				<ul>
+					<li>數值的範圍在0~9內，需執行1回合</li>
+					<li>數值的範圍在0~99內，需執行2回合</li>
+					<li>數值的範圍在0~999內，需執行3回合</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li><dfn>LSD &amp; MSD</dfn>
+		<ul>
+			<li><strong>LSD(Least Significant Digital)</strong>
+				<ul>
+					<li>由右到左</li>
+					<li><span class="ex"><span class="exPrefix">範例：</span>173，依序用3,7,1來分類</span></li>
+				</ul>
+			</li>
+			<li><strong>MSD(Most Significant Digital)</strong>
+				<ul>					
+					<li>由左到右</li>
+					<li><span class="ex"><span class="exPrefix">範例：</span>173，依序用1,7,3來分類</span></li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li><span class="h1">基數排序作法</span>
+		<div class="tabs ui-tabs ui-widget ui-widget-content ui-corner-all" style="width: 700px; float: left;">
+        	<ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">	
+            	<li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="0" aria-controls="LSD_RadixSort" aria-labelledby="ui-id-1" aria-selected="true"><a title="Javascript" href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#LSD_RadixSort" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-1">RadixSort(LSD)</a></li>
+            	<li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="MSD_RadixSort" aria-labelledby="ui-id-2" aria-selected="false"><a title="Javascript" href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#MSD_RadixSort" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-2">RadixSort(MSD)</a></li>            	            
+        	</ul>	
+            <div id="LSD_RadixSort" aria-labelledby="ui-id-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-expanded="true" aria-hidden="false">
+            	<ol>
+            		<li>選定好本回合使用的<strong>基數</strong></li>
+					<li>依序用<strong>基數</strong>對每一筆資料取得該回合的LSD</li>
+					<li>依取得的LSD將資料放到對應的<strong>桶子</strong>中</li>
+					<li>依<strong>桶子</strong>內存放的順序，將資料回存原來的陣列</li>
+					<li>重複上面四個步驟，直到範圍內的<strong>基數</strong>皆已使用</li>
+				</ol>
+            </div>
+            <div id="MSD_RadixSort" aria-labelledby="ui-id-2" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;">
+            	<ol>
+            		<li>選定好本回合使用的<strong>基數</strong></li>
+					<li>依序用<strong>基數</strong>對每一筆資料取得該回合的MSD</li>
+					<li>依取得的MSD將資料放到對應的<strong>桶子</strong>中</li>
+					<li>依序<strong>對每個桶子重複上述三個步驟</strong>(遞迴)，直到範圍內的<strong>基數</strong>皆已使用</li>
+					<li>依<strong>桶子</strong>內存放的順序，將資料回存原來的陣列</li>
+				</ol>
+            </div>
+       </div>
+       <div style="clear: left;"></div>
+	</li>
+	<li><dfn>Radix Sort(LSD)圖解：</dfn>
+		<div style="display: inline-block; overflow: scroll; border:solid 1px DodgerBlue;">
+			<div style="height: 300px;">
+				<div><img alt="Radix Sort" src="./[演算法] 基數排序法(Radix Sort)_files/RadixSort01.png"></div>
+				<div><img alt="Radix Sort" src="./[演算法] 基數排序法(Radix Sort)_files/RadixSort02.png"></div>
+			</div>
+		</div>
+	</li>		
+
+	<li><span class="h1">時間複雜度(Time Complexity)</span>
+		<ul>
+			<li>Best Case：Ο(d × (n+r))</li>
+			<li>Worst Case：Ο(d × (n+r))</li>
+			<li>Average Case：Ο(d × (n+r))</li>
+			<li>說明：
+				<ul>
+					<li>d = 執行回合數</li>
+					<li>n = 數列長度</li>
+					<li>r = 基數</li>
+					<li>每回合將資料分配到桶子需Ο(n)</li>
+					<li>每回合將桶子內的資料取出，合併成數列需Ο(r)</li>
+					<li>∴每回合需Ο( n + r)</li>
+				</ul>
+			</li>
+			
+		</ul>
+	</li>
+	<li><span class="h1">空間複雜度(Space Complexity)</span>：Ο(n × r)
+		<ul>
+			<li>使用<strong>二維陣列</strong>來當桶子：Ο(n × r)
+				<ul>
+					<li>n = 數列長度</li>
+					<li>r = 基數</li>
+					<li>需要r個桶子，每個桶子需可放n筆資料 <span class="arr"> ⇒ </span> Ο( n × r)</li>
+				</ul>	
+			</li>
+			<li>使用<strong>鏈結串列</strong>來當桶子：Ο(n)
+				<ul>
+					<li>n = 數列長度</li>
+				</ul>
+			</li>		
+		</ul>
+	</li>
+	<li><span class="h1">穩定性(Stable/Unstable)</span>：穩定(Stable)</li>
+
+	<li><span class="h1">演算法 </span>
+		<div class="tabs ui-tabs ui-widget ui-widget-content ui-corner-all" style="width: 700px; height: 500px; overflow: auto; float: left;">
+        	<ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">	
+            	<li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="0" aria-controls="jsCode1" aria-labelledby="ui-id-3" aria-selected="true"><a title="Javascript" href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Radix/Radix.php#jsCode1" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-3">JS(LSD)</a></li>            	            
+        	</ul>	
+            <div id="jsCode1" aria-labelledby="ui-id-3" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-expanded="true" aria-hidden="false">
+<pre class="prettyprint lang-js noborder"><span class="com">//初始化桶子</span><span class="pln">
+</span><span class="kwd">var</span><span class="pln"> initArray </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">buckets</span><span class="pun">,</span><span class="pln"> count</span><span class="pun">){</span><span class="pln">
+    </span><span class="kwd">for</span><span class="pun">(</span><span class="kwd">var</span><span class="pln"> i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"> i </span><span class="pun">&lt;</span><span class="pln"> buckets</span><span class="pun">.</span><span class="pln">length</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">++){</span><span class="pln">
+        buckets</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]</span><span class="pln">  </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Array</span><span class="pun">(</span><span class="pln">buckets</span><span class="pun">.</span><span class="pln">length</span><span class="pun">);</span><span class="pln">
+        count</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="kwd">var</span><span class="pln"> radixSort </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">data</span><span class="pun">){</span><span class="pln">
+    </span><span class="kwd">var</span><span class="pln"> MAX </span><span class="pun">=</span><span class="pln"> </span><span class="lit">100</span><span class="pun">;</span><span class="pln">                          </span><span class="com">// 數的上限</span><span class="pln">
+    </span><span class="kwd">var</span><span class="pln"> dataIndex </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> radix </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">           </span><span class="com">// radix = 1, 10, 100,...</span><span class="pln">
+    </span><span class="kwd">var</span><span class="pln"> buckets </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Array</span><span class="pun">(</span><span class="pln">data</span><span class="pun">.</span><span class="pln">length</span><span class="pun">),</span><span class="pln">   </span><span class="com">// 桶子 </span><span class="pln">
+        count </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Array</span><span class="pun">(</span><span class="pln">data</span><span class="pun">.</span><span class="pln">length</span><span class="pun">);</span><span class="pln">     </span><span class="com">// 記錄每個桶子裝了幾個數值</span><span class="pln">
+    initArray</span><span class="pun">(</span><span class="pln"> buckets</span><span class="pun">,</span><span class="pln"> count </span><span class="pun">);</span><span class="pln">            </span><span class="com">// 初始化桶子</span><span class="pln">
+
+    </span><span class="kwd">while</span><span class="pun">(</span><span class="pln">radix </span><span class="pun">&lt;=</span><span class="pln"> MAX</span><span class="pun">){</span><span class="pln">                    </span><span class="com">// 若基數沒有超出上限</span><span class="pln">
+    	</span><span class="com">// 分配</span><span class="pln">
+        </span><span class="kwd">for</span><span class="pun">(</span><span class="kwd">var</span><span class="pln"> i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"> i </span><span class="pun">&lt;</span><span class="pln"> data</span><span class="pun">.</span><span class="pln">length</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">++){</span><span class="pln">
+            </span><span class="kwd">var</span><span class="pln"> LSD </span><span class="pun">=</span><span class="pln"> parseInt</span><span class="pun">((</span><span class="pln">data</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]/</span><span class="pln">radix</span><span class="pun">))</span><span class="pln"> </span><span class="pun">%</span><span class="pln"> </span><span class="lit">10</span><span class="pun">;</span><span class="pln">    </span><span class="com">// 計算LSD(=那一個桶子)</span><span class="pln">
+            buckets</span><span class="pun">[</span><span class="pln">LSD</span><span class="pun">][</span><span class="pln">count</span><span class="pun">[</span><span class="pln">LSD</span><span class="pun">]]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> data</span><span class="pun">[</span><span class="pln">i</span><span class="pun">];</span><span class="pln">          </span><span class="com">// 將資料放到對應的桶子</span><span class="pln">
+            count</span><span class="pun">[</span><span class="pln">LSD</span><span class="pun">]++;</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        radix </span><span class="pun">*=</span><span class="pln"> </span><span class="lit">10</span><span class="pun">;</span><span class="pln">                                     </span><span class="com">// 更新基底：1-&gt;10, 10-&gt;100</span><span class="pln">
+		
+        </span><span class="com">// 合併</span><span class="pln">
+        dataIndex </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">for</span><span class="pun">(</span><span class="kwd">var</span><span class="pln"> i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"> i </span><span class="pun">&lt;</span><span class="pln"> data</span><span class="pun">.</span><span class="pln">length</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">++){</span><span class="pln">         </span><span class="com">// 將桶子內的資料合併</span><span class="pln">
+            </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">count</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]</span><span class="pln"> </span><span class="pun">!=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">){</span><span class="pln">                        </span><span class="com">// 如果桶子內有資料</span><span class="pln">
+                </span><span class="kwd">for</span><span class="pun">(</span><span class="kwd">var</span><span class="pln"> j </span><span class="pun">=</span><span class="lit">0</span><span class="pln"> </span><span class="pun">;</span><span class="pln"> j </span><span class="pun">&lt;</span><span class="pln"> count</span><span class="pun">[</span><span class="pln">i</span><span class="pun">];</span><span class="pln"> j</span><span class="pun">++){</span><span class="pln">
+                    data</span><span class="pun">[</span><span class="pln">dataIndex</span><span class="pun">++]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> buckets</span><span class="pun">[</span><span class="pln">i</span><span class="pun">][</span><span class="pln">j</span><span class="pun">];</span><span class="pln">
+                </span><span class="pun">}</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+            count</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">                             </span><span class="com">// 歸0，以便下一回合使用</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">		
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">};</span><span class="pln">
+
+radixSort</span><span class="pun">(</span><span class="pln">data</span><span class="pun">);</span></pre>   
+            </div>   
+		</div>
+		<div class="tabEnd"></div>
+	</li>    
+	
+	
+
+	<!--
+	<li>堆積排序法為選擇排序法的改良</li>	
+	<li><span class="h1">堆積排序作法</span>
+		<div class="tabs" style="width: 700px;" >
+        	<ul>	
+            	<li><a title="Javascript" href="#maxHeapSort">Max Heap(Bottom-Up)</a></li>
+            	<li><a title="Javascript" href="#minHeapSort">Min Heap(Bottom-Up)</a></li>
+            	<li><a title="Javascript" href="#insertHeapSort">Insert(Top-Down)</a></li>            	            
+        	</ul>	
+            <div id="maxHeapSort" >
+            	<ul>
+					<li>將數列轉換成<strong>Max Heap</strong></li>
+					<li>排序 (<strong>最大堆積樹(Max Heap)</strong>的<strong>樹根</strong>一定是最大值)
+						<ul>						
+							<li>將<strong>樹根(最大值)</strong>與<strong>最後一個節點</strong>調換，將最後一個節點(原樹根)<strong>取出</strong>，並加入已排序數列
+								<ul><li>相當於對Max Heap Tree作Delete MaxNode</li></ul>
+							</li>
+							<li>對整棵樹重新調整為<strong>最大堆積樹</strong> <span class="arr"></span> 調整後樹根為Max Node</li>
+							<li>重複步驟1、2</li>
+						</ul>	
+					</li>
+
+				</ul>
+            </div>
+            <div id="minHeapSort" >
+            	<ul>
+					<li>將數列轉換成<strong>Min Heap</strong></li>
+					<li>排序 (<strong>最小堆積樹(Min Heap)</strong>的<strong>樹根</strong>一定是最小值)
+						<ul>						
+							<li>將<strong>樹根(最小值)</strong>與<strong>最後一個節點</strong>調換，將最後一個節點(原樹根)<strong>取出</strong>，並加入已排序數列
+								<ul><li>相當於對Min Heap Tree作Delete MinNode</li></ul>
+							</li>
+							<li>對整棵樹重新調整為<strong>最小堆積樹</strong> <span class="arr"></span> 調整後樹根為Min Node</li>
+							<li>重複步驟1、2</li>
+						</ul>	
+					</li>
+				</ul>
+            </div>
+
+            <div id="insertHeapSort" >
+            	<ul>
+					<li>將數列裡的數值依序加入<strong>Heap Tree</strong> <span class="arr"></span> 新加入的值為最後一個樹葉節點</li>
+					<li>每加入一個數值，則整棵樹重新調整為<strong>Heap Tree</strong>
+						<ul>
+							<li>要由小排到大 <span class="arr"></span> Min Heap</li>
+							<li>要由大排到小 <span class="arr"></span> Max Heap</li>
+						</ul>
+					</li>
+				</ul>
+            </div>               
+            
+       </div>
+       <div style="clear: left;"></div>
+	</li>
+	<li><strong>取出</strong>:實作時一般是縮減Heap Tree的範圍
+		<ul>
+			<li><span class="ex"></span>
+				<ul>
+					<li>取出前Heap Tree陣列範圍為A[0-<strong>9</strong>]</li>
+					<li>取出最後一個樹枼節點後，Heap Tree陣列範圍為A[0-<strong>8</strong>]</li>
+				</ul>
+			</li>
+		</ul>
+	</li>	
+
+	<li><dfn>陣對映到二元樹</dfn><br />
+		<img alt="陣對映到二元樹" src="img/DataToHeap.png" />
+	</li>
+	<li><dfn>二元樹調整為<strong>Max Heap</strong></dfn>
+		<ul>
+			<li>二元樹有floor(n/2)個<strong>內部節點</strong></li>
+			<li><strong>由後往前</strong>以每個內部節點為Root，作<strong>堆積化(Heapify)</strong></li>
+			<li><dfn>堆積化(Heapify)</dfn>
+				<ul>
+					<li>令Root的左、右子樹皆符合Heap，僅Root不符合Heap</li>
+					<li>令Root、左子元素、右子元素3個元素中，最大者為MaxNode</li>
+					<li>若Root = MaxNode <span class="arr"></span> 結束</li>
+					<li>若左子元素或右子元素 = MaxNode
+						<ul>
+							<li>將Root與MaxNode作對調(Swap)</li>
+							<li>若對調完的Root有子節點 <span class="arr"></span>對原來的Root作Heapify</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li><span class="ex"></span>
+				<div style="width 700px; overflow: scroll; border:solid 1px DodgerBlue;">
+					<div style="width: 2700px; ">
+						<div style="display:inline-block;width: 320px;">
+							<div style="margin-left:5px; color:brown;">
+								原始數列的二元樹<br /><br />
+							</div>
+							<div><img alt="原始數列的二元樹" src="img/Heapify00.png" /></div>
+						</div>
+						<div style="height: 200px; width: 50px; display:inline-block; background: url('img/Arrow.png') no-repeat center;  "></div>				
+						<div style="display:inline-block; width: 320px;">
+							<div style="margin-left:5px; color:brown;">
+								依序對3個非樹葉節點： 2[57], 1[14], 0[38]進行<strong>Heapify</strong><br /><br />
+							</div>
+							<div><img alt="有3個非樹葉節點：0[38], 1[14], 2[57]" src="img/Heapify01.png" /></div>
+						</div>						
+						<div style="height: 200px; width: 50px; display:inline-block; background: url('img/Arrow.png') no-repeat center;  "></div>
+						<div style="display:inline-block; width: 320px;">
+							<div style="margin-left:5px; color:brown;">
+								以2[57]為Root進行Heapify<br />
+								Root[57]最大<span class="arr"></span>結束<br />
+							</div>
+							<div><img alt="以2[57]為Root進行Heapify" src="img/Heapify02.png" /></div>
+						</div>
+						<div style="height: 200px; width: 50px; display:inline-block; background: url('img/Arrow.png') no-repeat center;  "></div>
+						<div style="display:inline-block; width: 320px;">
+							<div style="margin-left:5px; color:brown;">
+								以1[14]為Root進行Heapify<br />
+								3[59]最大 <span class="arr"></span> 3[59]與Root[14]做Swap<br />
+								3[14]沒有子節點<span class="arr"></span>結束
+							</div>
+							<div><img alt="以1[14]為Root進行Heapify" src="img/Heapify03.png" /></div>
+						</div>
+						<div style="height: 200px; width: 50px; display:inline-block; background: url('img/Arrow.png') no-repeat center;  "></div>
+						<div style="display:inline-block; width: 320px;">
+							<div style="margin-left:5px; color:brown;">
+								以0[38]為Root進行Heapify<br />
+								1[59]最大 <span class="arr"></span> 1[59]與Root[38]做Swap<br />
+								1[38]有子節點 <span class="arr"></span> 對1[38]作Heapify
+							</div>
+							<div><img alt="以0[38]為Root進行Heapify" src="img/Heapify04.png" /></div>
+						</div>
+						<div style="height: 200px; width: 50px; display:inline-block; background: url('img/Arrow.png') no-repeat center;  "></div>
+						<div style="display:inline-block; width: 320px;">
+							<div style="margin-left:5px; color:brown;">
+								以1[38]為Root進行Heapify<br />
+								4[52]最大 <span class="arr"></span> 4[52]與Root[38]做Swap<br />
+								4[38]沒有子節點<span class="arr"></span>結束
+							</div>
+							<div><img alt="以1[38]為Root進行Heapify" src="img/Heapify05.png" /></div>
+						</div>
+						<div style="height: 200px; width: 50px; display:inline-block; background: url('img/Arrow.png') no-repeat center;  "></div>
+						<div style="display:inline-block; width: 320px;">
+							<div style="margin-left:5px; color:brown;">
+								Max Heap<br /><br /><br />
+							</div>
+							<div><img alt="Max Heap" src="img/Heapify06.png" /></div>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</li>	
+	<li><dfn>Heap Sort(Max Heap)圖解：</dfn>
+		<ul>
+			<li>二元樹調整為Max Heap
+				<div style="width 700px; overflow: scroll; border:solid 1px DodgerBlue;">
+					<div style="width: 5500px;">
+						<div style="display:inline-block;width: 520px;">
+							<div style="margin-left:5px; color:brown; height: 70px;">
+								<span class="orange bold">原始數列的二元樹</span>
+							</div>
+							<div><img alt="原始數列的二元樹" src="img/HeapSort00.png" /></div>
+						</div>
+						<div style="height: 200px; width: 50px; margin: 0 10px; display:inline-block; background: url('img/Arrow.png') no-repeat center;  "></div>						
+						<div style="display:inline-block;width: 520px;">
+							<div style="margin-left:5px; color:brown; height: 70px;">
+								<span class="orange bold">以4[45]為Root作Heapify</span><br />
+								9[57]最大 <span class="arr"></span> 9[57]與4[45]做Swap<br />
+								9[45]沒有子節點 <span class="arr"></span> 結束
+							</div>
+							<div><img alt="以4[45]為Root作Heapify" src="img/HeapSort1_1.png" /></div>
+						</div>
+						<div style="height: 200px; width: 50px; margin: 0 10px; display:inline-block; background: url('img/Arrow.png') no-repeat center;  "></div>						
+						<div style="display:inline-block;width: 520px;">
+							<div style="margin-left:5px; color:brown; height: 70px;">
+								<span class="orange bold">以3[79]為Root作Heapify</span><br />
+								Root[79]最大 <span class="arr"></span> 結束
+							</div>
+							<div><img alt="以3[79]為Root作Heapify" src="img/HeapSort1_2.png" /></div>
+						</div>
+						<div style="height: 200px; width: 50px; margin: 0 10px; display:inline-block; background: url('img/Arrow.png') no-repeat center;  "></div>
+						<div style="display:inline-block;width: 520px;">
+							<div style="margin-left:5px; color:brown; height: 70px;">
+								<span class="orange bold">以2[92]為Root作Heapify</span><br />
+								Root[92]最大 <span class="arr"></span> 結束
+							</div>							
+							<div><img alt="以2[92]為Root作Heapify" src="img/HeapSort1_3.png" /></div>
+						</div>
+						<div style="height: 200px; width: 50px; margin: 0 10px; display:inline-block; background: url('img/Arrow.png') no-repeat center;  "></div>
+						<div style="display:inline-block;width: 520px;">
+							<div style="margin-left:5px; color:brown; height: 70px;">
+								<span class="orange bold">以1[51]為Root作Heapify</span><br />
+								3[79]最大 <span class="arr"></span> 3[79]與1[51]做Swap<br />
+								3[51]有子節點 <span class="arr"></span> 對3[51]作Heapify
+							</div>
+							<div><img alt="以1[51]為Root作Heapify" src="img/HeapSort1_4.png" /></div>
+						</div>
+						<div style="height: 200px; width: 50px; margin: 0 10px; display:inline-block; background: url('img/Arrow.png') no-repeat center;  "></div>
+						<div style="display:inline-block;width: 520px;">
+							<div style="margin-left:5px; color:brown; height: 70px;">
+								<span class="orange bold">以3[51]為Root作Heapify</span><br />
+								7[70]最大 <span class="arr"></span> 7[70]與3[51]做Swap<br />
+								7[51]沒有子節點 <span class="arr"></span> 結束
+							</div>
+							<div><img alt="以3[51]為Root作Heapify" src="img/HeapSort1_5.png" /></div>
+						</div>
+						<div style="height: 200px; width: 50px; margin: 0 10px; display:inline-block; background: url('img/Arrow.png') no-repeat center;  "></div>
+						<div style="display:inline-block;width: 520px;">
+							<div style="margin-left:5px; color:brown; height: 70px;">
+								<span class="orange bold">以0[14]為Root作Heapify</span><br />
+								2[92]最大 <span class="arr"></span> 2[92]與0[14]做Swap<br />
+								2[14]有子節點 <span class="arr"></span> 對2[14]作Heapify
+							</div>
+							<div><img alt="以0[14]為Root作Heapify" src="img/HeapSort1_6.png" /></div>
+						</div>
+						<div style="height: 200px; width: 50px; margin: 0 10px; display:inline-block; background: url('img/Arrow.png') no-repeat center;  "></div>
+						<div style="display:inline-block;width: 520px;">
+							<div style="margin-left:5px; color:brown; height: 70px;">
+								<span class="orange bold">以2[14]為Root作Heapify</span><br />
+								6[75]最大 <span class="arr"></span> 6[75]與2[14]做Swap<br />
+								6[14]沒有子節點 <span class="arr"></span> 結束
+							</div>
+							<div><img alt="以2[14]為Root作Heapify" src="img/HeapSort1_7.png" /></div>
+						</div>
+						<div style="height: 200px; width: 50px; margin: 0 10px; display:inline-block; background: url('img/Arrow.png') no-repeat center;  "></div>
+						<div style="display:inline-block;width: 520px;">
+							<div style="margin-left:5px; color:brown; height: 70px;">
+								<span class="orange bold">Max Heap</span><br />
+							</div>
+							<div><img alt="Max Heap" src="img/HeapSort1_8.png" /></div>
+						</div>
+					</div>					
+				</div>
+			</li>
+			<li>排序
+				<div style="width 700px; overflow: scroll; border:solid 1px DodgerBlue;">
+					<div style="width: 16000px;">
+						<div style="display:inline-block;width: 520px;">							
+							<div style="color:brown; height: 70px;">
+								<span style="margin-left: 5px;" class="orange bold">Max Heap</span>
+							</div>	
+							<div><img alt="Max Heap" src="img/HeapSort1_8.png" /></div>
+						</div>
+						
+						<div style="height: 200px; width: 50px; display:inline-block; background: url('img/Arrow.png') no-repeat center;  "></div>
+						
+						<div style="display:inline-block;width: 520px;">
+							<div style="margin-left:5px; color:brown; height: 70px;">
+								<span class="orange bold">將0[92]與9[45]作Swap</span><br />
+							</div>
+							<div><img alt="將0[92]與9[45]作Swap" src="img/HeapSort2_1.png" /></div>
+						</div>
+						
+						<div style="height: 200px; width: 50px; display:inline-block; background: url('img/Arrow.png') no-repeat center;  "></div>
+						
+						<div style="display:inline-block;width: 520px;">
+							<div style="margin-left:5px; color:brown; height: 70px;">
+								<span class="orange bold">以0[45]為Root作Heapify</span><br />
+								1[79]最大 <span class="arr"></span> 1[79]與0[45]做Swap<br />
+								1[45]有子節點 <span class="arr"></span> 對1[45]作Heapify
+							</div>
+							<div><img alt="以0[45]為Root作Heapify" src="img/HeapSort2_2.png" /></div>
+						</div>
+						
+						<div style="height: 200px; width: 50px; display:inline-block; background: url('img/Arrow.png') no-repeat center;  "></div>
+						
+						<div style="display:inline-block;width: 520px;">
+							<div style="margin-left:5px; color:brown; height: 70px;">
+								<span class="orange bold">以1[45]為Root作Heapify</span><br />
+								3[70]最大 <span class="arr"></span> 3[70]與1[45]做Swap<br />
+								3[45]有子節點 <span class="arr"></span> 對3[45]作Heapify
+							</div>
+							<div><img alt="以1[45]為Root作Heapify" src="img/HeapSort2_3.png" /></div>
+						</div>
+						
+						<div style="height: 200px; width: 50px; display:inline-block; background: url('img/Arrow.png') no-repeat center;  "></div>
+						
+						<div style="display:inline-block;width: 520px;">
+							<div style="margin-left:5px; color:brown; height: 70px;">
+								<span class="orange bold">以3[45]為Root作Heapify</span><br />
+								7[51]最大 <span class="arr"></span> 7[51]與3[45]做Swap<br />
+								7[45]沒有子節點 <span class="arr"></span> 結束
+							</div>
+							<div><img alt="以3[45]為Root作Heapify" src="img/HeapSort2_4.png" /></div>
+						</div>
+						
+						<div style="height: 200px; width: 50px; display:inline-block; background: url('img/Arrow.png') no-repeat center;  "></div>
+						
+						<div style="display:inline-block;width: 520px;">
+							<div style="margin-left:5px; color:brown; height: 70px;">
+								<span class="orange bold">將0[79]與8[3]作Swap</span><br />
+							</div>
+							<div><img alt="將0[79]與8[3]作Swap" src="img/HeapSort2_5.png" /></div>
+						</div>
+						
+						<div style="height: 200px; width: 50px; display:inline-block; background: url('img/Arrow.png') no-repeat center;  "></div>
+						
+						<div style="display:inline-block;width: 520px;">
+							<div style="margin-left:5px; color:brown; height: 70px;">
+								<span class="orange bold">以0[3]為Root作Heapify</span><br />
+								2[75]最大 <span class="arr"></span> 2[75]與0[3]做Swap<br />
+								2[3]有子節點 <span class="arr"></span> 對2[3]作Heapify
+							</div>
+							<div><img alt="以0[3]為Root作Heapify" src="img/HeapSort2_6.png" /></div>
+						</div>
+						
+						<div style="height: 200px; width: 50px; display:inline-block; background: url('img/Arrow.png') no-repeat center;  "></div>
+						
+						<div style="display:inline-block;width: 520px;">
+							<div style="margin-left:5px; color:brown; height: 70px;">
+								<span class="orange bold">以2[3]為Root作Heapify</span><br />
+								6[14]最大 <span class="arr"></span> 6[14]與2[3]做Swap<br />
+								6[3]沒有子節點 <span class="arr"></span> 結束
+							</div>
+							<div><img alt="以2[3]為Root作Heapify" src="img/HeapSort2_7.png" /></div>
+						</div>
+						
+						<div style="height: 200px; width: 50px; display:inline-block; background: url('img/Arrow.png') no-repeat center;  "></div>
+						
+						<div style="display:inline-block;width: 520px;">
+							<div style="margin-left:5px; color:brown; height: 70px;">
+								<span class="orange bold">將0[75]與7[45]作Swap</span><br />
+							</div>
+							<div><img alt="將0[75]與7[45]作Swap" src="img/HeapSort2_8.png" /></div>
+						</div>
+						
+						<div style="height: 200px; width: 50px; display:inline-block; background: url('img/Arrow.png') no-repeat center;  "></div>
+						
+						<div style="display:inline-block;width: 520px;">
+							<div style="margin-left:5px; color:brown; height: 70px;">
+								<span class="orange bold">以0[45]為Root作Heapify</span><br />
+								1[70]最大 <span class="arr"></span> 1[70]與0[45]做Swap<br />
+								1[45]有子節點 <span class="arr"></span> 對1[45]作Heapify
+							</div>
+							<div><img alt="以0[45]為Root作Heapify" src="img/HeapSort2_9.png" /></div>
+						</div>
+						
+						<div style="height: 200px; width: 50px; display:inline-block; background: url('img/Arrow.png') no-repeat center;  "></div>
+						
+						<div style="display:inline-block;width: 520px;">
+							<div style="margin-left:5px; color:brown; height: 70px;">
+								<span class="orange bold">以1[45]為Root作Heapify</span><br />
+								4[57]最大 <span class="arr"></span> 4[57]與1[45]做Swap<br />
+								4[45]沒有子節點 <span class="arr"></span> 結束
+							</div>
+							<div><img alt="以1[45]為Root作Heapify" src="img/HeapSort2_10.png" /></div>
+						</div>
+						
+						<div style="height: 200px; width: 50px; display:inline-block; background: url('img/Arrow.png') no-repeat center;  "></div>
+						
+						<div style="display:inline-block;width: 520px;">
+							<div style="margin-left:5px; color:brown; height: 70px;">
+								<span class="orange bold">將0[70]與6[3]作Swap</span>
+							</div>
+							<div><img alt="將0[70]與6[3]作Swap" src="img/HeapSort2_11.png" /></div>
+						</div>
+						
+						<div style="height: 200px; width: 50px; display:inline-block; background: url('img/Arrow.png') no-repeat center;  "></div>
+						
+						<div style="display:inline-block;width: 520px;">
+							<div style="margin-left:5px; color:brown; height: 70px;">
+								<span class="orange bold">以0[3]為Root作Heapify</span><br />
+								1[57]最大 <span class="arr"></span> 1[57]與0[3]做Swap<br />
+								1[3]有子節點 <span class="arr"></span> 對1[3]作Heapify
+							</div>
+							<div><img alt="以0[3]為Root作Heapify" src="img/HeapSort2_12.png" /></div>
+						</div>
+						
+						<div style="height: 200px; width: 50px; display:inline-block; background: url('img/Arrow.png') no-repeat center;  "></div>
+						
+						<div style="display:inline-block;width: 520px;">
+							<div style="margin-left:5px; color:brown; height: 70px;">
+								<span class="orange bold">以1[3]為Root作Heapify</span><br />
+								3[51]最大 <span class="arr"></span> 3[51]與1[3]做Swap<br />
+								3[3]沒有子節點 <span class="arr"></span> 結束
+							</div>
+							<div><img alt="以1[3]為Root作Heapify" src="img/HeapSort2_13.png" /></div>
+						</div>
+						
+						<div style="height: 200px; width: 50px; display:inline-block; background: url('img/Arrow.png') no-repeat center;  "></div>
+						
+						<div style="display:inline-block;width: 520px;">
+							<div style="margin-left:5px; color:brown; height: 70px;">
+								<span class="orange bold">將0[57]與5[2]作Swap</span>
+							</div>
+							<div><img alt="將0[57]與5[2]作Swap" src="img/HeapSort2_14.png" /></div>
+						</div>
+						
+						<div style="height: 200px; width: 50px; display:inline-block; background: url('img/Arrow.png') no-repeat center;  "></div>
+						
+						<div style="display:inline-block;width: 520px;">
+							<div style="margin-left:5px; color:brown; height: 70px;">
+								<span class="orange bold">以0[2]為Root作Heapify</span><br />
+								1[51]最大 <span class="arr"></span> 1[51]與0[2]做Swap<br />
+								1[2]有子節點  <span class="arr"></span> 對1[2]作Heapify
+							</div>
+							<div><img alt="以0[2]為Root作Heapify" src="img/HeapSort2_15.png" /></div>
+						</div>
+						
+						<div style="height: 200px; width: 50px; display:inline-block; background: url('img/Arrow.png') no-repeat center;  "></div>
+						
+						<div style="display:inline-block;width: 520px;">
+							<div style="margin-left:5px; color:brown; height: 70px;">
+								<span class="orange bold">以1[2]為Root作Heapify</span><br />
+								4[45]最大 <span class="arr"></span> 4[45]與1[2]做Swap<br />
+								4[2]沒有子節點 <span class="arr"></span> 結束
+							</div>
+							<div><img alt="以1[2]為Root作Heapify" src="img/HeapSort2_16.png" /></div>
+						</div>
+						
+						<div style="height: 200px; width: 50px; display:inline-block; background: url('img/Arrow.png') no-repeat center;  "></div>
+						
+						<div style="display:inline-block;width: 520px;">
+							<div style="margin-left:5px; color:brown; height: 70px;">
+								<span class="orange bold">將0[51]與4[2]作Swap</span>
+							</div>
+							<div><img alt="將0[51]與4[2]作Swap" src="img/HeapSort2_17.png" /></div>
+						</div>
+						
+						<div style="height: 200px; width: 50px; display:inline-block; background: url('img/Arrow.png') no-repeat center;  "></div>
+						
+						<div style="display:inline-block;width: 520px;">
+							<div style="margin-left:5px; color:brown; height: 70px;">
+								<span class="orange bold">以0[2]為Root作Heapify</span><br />
+								1[45]最大 <span class="arr"></span> 1[45]與0[2]做Swap<br />
+								1[2]有子節點  <span class="arr"></span> 對1[2]作Heapify
+							</div>
+							<div><img alt="以0[2]為Root作Heapify" src="img/HeapSort2_18.png" /></div>
+						</div>
+						
+						<div style="height: 200px; width: 50px; display:inline-block; background: url('img/Arrow.png') no-repeat center;  "></div>
+						
+						<div style="display:inline-block;width: 520px;">
+							<div style="margin-left:5px; color:brown; height: 70px;">
+								<span class="orange bold">以1[2]為Root作Heapify</span><br />
+								3[3]最大 <span class="arr"></span> 3[3]與1[2]做Swap<br />
+								3[2]沒有子節點  <span class="arr"></span> 結束
+							</div>
+							<div><img alt="以1[2]為Root作Heapify" src="img/HeapSort2_19.png" /></div>
+						</div>
+						
+						<div style="height: 200px; width: 50px; display:inline-block; background: url('img/Arrow.png') no-repeat center;  "></div>
+						
+						<div style="display:inline-block;width: 520px;">
+							<div style="margin-left:5px; color:brown; height: 70px;">
+								<span class="orange bold">將0[45]與3[2]作Swap</span>
+							</div>
+							<div><img alt="將0[45]與3[2]作Swap" src="img/HeapSort2_20.png" /></div>
+						</div>
+						
+						<div style="height: 200px; width: 50px; display:inline-block; background: url('img/Arrow.png') no-repeat center;  "></div>
+						
+						<div style="display:inline-block;width: 520px;">
+							<div style="margin-left:5px; color:brown; height: 70px;">
+								<span class="orange bold">以0[2]為Root作Heapify</span><br />
+								2[14]最大 <span class="arr"></span> 2[14]與0[2]做Swap<br />
+								2[2]沒有子節點  <span class="arr"></span> 結束
+							</div>
+							<div><img alt="以0[2]為Root作Heapify" src="img/HeapSort2_21.png" /></div>
+						</div>
+						
+						<div style="height: 200px; width: 50px; display:inline-block; background: url('img/Arrow.png') no-repeat center;  "></div>
+						
+						<div style="display:inline-block;width: 520px;">
+							<div style="margin-left:5px; color:brown; height: 70px;">
+								<span class="orange bold">將0[14]與2[2]作Swap</span>
+							</div>
+							<div><img alt="將0[14]與2[2]作Swap" src="img/HeapSort2_22.png" /></div>
+						</div>
+						
+						<div style="height: 200px; width: 50px; display:inline-block; background: url('img/Arrow.png') no-repeat center;  "></div>
+						
+						<div style="display:inline-block;width: 520px;">
+							<div style="margin-left:5px; color:brown; height: 70px;">
+								<span class="orange bold">以0[2]為Root作Heapify</span><br />
+								1[3]最大 <span class="arr"></span> 1[3]與0[2]做Swap<br />
+								1[2]沒有子節點  <span class="arr"></span> 結束
+							</div>
+							<div><img alt="以0[2]為Root作Heapify" src="img/HeapSort2_23.png" /></div>
+						</div>
+						
+						<div style="height: 200px; width: 50px; display:inline-block; background: url('img/Arrow.png') no-repeat center;  "></div>
+						
+						<div style="display:inline-block;width: 520px;">
+							<div style="margin-left:5px; color:brown; height: 70px;">
+								<span class="orange bold">將0[3]與1[2]作Swap</span>
+							</div>
+							<div><img alt="將0[3]與1[2]作Swap" src="img/HeapSort2_24.png" /></div>
+						</div>
+						
+						<div style="height: 200px; width: 50px; display:inline-block; background: url('img/Arrow.png') no-repeat center;  "></div>
+						
+						<div style="display:inline-block;width: 520px;">
+							<div style="margin-left:5px; color:brown; height: 70px;">								
+								<span class="orange bold">以0[2]為Root作Heapify</span><br />								
+								0[2]沒有子節點  <span class="arr"></span> 結束
+							</div>
+							<div><img alt="以0[2]為Root作Heapify" src="img/HeapSort2_25.png" /></div>
+						</div>
+						
+						<div style="height: 200px; width: 50px; display:inline-block; background: url('img/Arrow.png') no-repeat center;  "></div>
+						
+						<div style="display:inline-block;width: 520px;">
+							<div style="margin-left:5px; color:brown; height: 70px;">								
+								<span class="orange bold">以0[2]為Root作Heapify</span><br />								
+								0[2]沒有子節點  <span class="arr"></span> 結束
+							</div>
+							<div><img alt="以0[2]為Root作Heapify" src="img/HeapSort2_26.png" /></div>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>		
+	</li>
+	
+	
+
+	<li><span class="h1">時間複雜度(Time Complexity)</span>
+		<ul>
+			<li>Best Case：&Omicron;(n log n)</li>
+			<li>Worst Case：&Omicron;(n log n)</li>
+			<li>Average Case：&Omicron;(n log n)</li>
+			<li>說明：
+				<ul>
+					<li>建立MaxHeap： &Omicron;(n)</li>
+					<li>執行n-1次Delete Max：(n-1) &times; &Omicron;(log n) = &Omicron;( n log n)</li>
+					<li>&Omicron;(n) + &Omicron;( n log n) = &Omicron;( n log n)</li>
+				</ul>
+				
+			</li>
+			
+		</ul>
+	</li>
+	<li><span class="h1">空間複雜度(Space Complexity)</span>：&Omicron;(1)
+		<ul>
+			<li>原地置換(In-Place)</li>			
+		</ul>
+	</li>
+	<li><span class="h1">穩定性(Stable/Unstable)</span>：不穩定(Unstable)</li>
+	<li><span class="h1">演算法 </span>
+		<div class="tabs" style="width: 700px; height: 500px; overflow: auto;" >
+        	<ul>	
+            	<li><a title="Javascript" href="#jsCode1">JS</a></li>            	            
+        	</ul>	
+            <div id="jsCode1" >
+<pre class="prettyprint lang-js noborder">
+var swap = function(data, i, j){ 
+    var tmp = data[i];
+    data[i] = data[j];
+    data[j] = tmp;
+};
+
+// 令Root的左、右子樹皆符合Heap，僅Root不符合Heap，將樹調整為Max Heap
+var heapify = function(data, root, length){
+    var leftChild = root*2 + 1;	    // Root的左子元素
+    var rightChild = root*2 + 2;    // Root的右子元素
+    var maxNode = -1;
+		
+    // 找出root, leftChild, rightChild，值最大者(maNode)
+    if(leftChild &lt; length &amp;&amp; (data[leftChild] > data[root]))
+        maxNode = leftChild;
+    else
+        maxNode = root;	
+    if(rightChild &lt; length &amp;&amp; (data[rightChild] &gt; data[maxNode]))
+        maxNode = rightChild;
+	
+    // 如果值最大者不是root，則作swap及heapify
+    if(maxNode != root){
+        swap(data, root, maxNode);
+        heapify(data, maxNode, length);
+    }	
+};
+
+var heapSort = function(data){
+    //將數列轉換成Max Heap
+    for(var i = Math.floor( data.length/2)-1; i &gt;= 0; i--){
+        heapify(data, i, data.length);
+    }	
+	
+    //排序
+    for(i = data.length - 1; i &gt; 0; i--){
+        swap(data, 0, i);
+        heapify(data, 0, i);
+    }
+};
+
+//執行
+var data = [92,38,59,57,14,52,19,69,23,84];
+heapSort(data);
+</pre>   
+            </div>   
+		</div>
+		<div style="clear: left;"></div>
+	</li>    
+	-->
+
+</ul>
+
+<div class="clear"></div><div class="PreNextPageLink"><a class="PrePageLink" title="堆積(Heap)排序法" href="http://notepad.yehyeh.net/Content/Algorithm/Sort/Heap/Heap.php">◄前一篇 [演算法]堆積(Heap)排序法</a><a class="NextPageLink" title="線性(Linear)搜尋法" href="http://notepad.yehyeh.net/Content/Algorithm/Search/LinearSearch/LinearSearch.php">[演算法]線性(Linear)搜尋法 後一篇►</a><div style="clear:both;"> </div></div></div> <!--content-->
+
+<script language="javascript" src="./[演算法] 基數排序法(Radix Sort)_files/Radix.js.下載"></script>
+
+			            
+            <div class="clear"></div>            
+            
+<div class="hAdsense">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-7169356158453069";
+/* 橫廣告 */
+google_ad_slot = "4222125535";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="./[演算法] 基數排序法(Radix Sort)_files/f.txt">
+</script>
+</div>            
+    	    <div id="footer">Copyright © YehYeh. All rights reserved.</div>    	    
+   		    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-16359729-1']);
+  _gaq.push(['_setDomainName', 'yehyeh.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>   		    
+        </div> <!--mainPanel-->
+       
+     </div> <!--innerWrapper-->
+</div> <!--wrapper-->
+
+<iframe name="oauth2relay356966381" id="oauth2relay356966381" src="./[演算法] 基數排序法(Radix Sort)_files/postmessageRelay.html" tabindex="-1" aria-hidden="true" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe></body></html>

@@ -1,0 +1,19 @@
+﻿
+.content div.demo { border: 1px solid Gray; padding: 10px; }
+.content div.demo>.demoBtn { width:30px; float: right; }
+
+.content div.demo .demoUnit {  margin: 0; padding: 0;}
+.content div.demo span.step { font-weight: bold; color: Orange; }
+/* .content div.demo span.shift { display: inline-block; width: 50px; } */
+.content div.demo .dataWrapper { margin-left: 50px; display: inline-block;}
+
+.content div.demo span.preProc, .content div.demo span.curProc, .content div.demo span.postProc { padding: 0 5px; }
+.content div.demo span.preProc {background-color:Pink; }
+.content div.demo span.curProc {color:DodgerBlue; font-weight:bold; background-color: GreenYellow; }
+.content div.demo span.postProc { }
+
+.autoPlayDemoDiv { float: left; width: 300px;}
+.manualPlayDemoDiv { float: right; width: 100px;}
+.slider { margin-left: 5px; display: inline-block; width: 150px; }
+
+.animate input { padding: 0 5px; }

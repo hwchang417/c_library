@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1527661083 source:c:\users\evan\desktop\interview\collection\library\tree\main.cpp
+	"../common/debug.h"
+
+1527523235 c:\users\evan\desktop\interview\collection\library\common\debug.h
+	<stdio.h>
+	<stdio.h>
+	<stdlib.h>
+

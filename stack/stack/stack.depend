@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1528871319 source:c:\users\evan\desktop\interview\collection\library\stack\main.c
+	<stdio.h>
+	"stack.h"
+
+1528871400 c:\users\evan\desktop\interview\collection\library\stack\stack.h
+	"../common/debug.h"
+
+1527523235 c:\users\evan\desktop\interview\collection\library\common\debug.h
+	<stdio.h>
+	<stdio.h>
+	<stdlib.h>
+
+1528871543 source:c:\users\evan\desktop\interview\collection\library\stack\stack.c
+	"stack.h"
+	"../common/debug.h"
+

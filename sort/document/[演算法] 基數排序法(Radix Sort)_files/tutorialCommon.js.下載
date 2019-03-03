@@ -1,0 +1,99 @@
+﻿/// <reference path="../jsLib/jquery-1.7-vsdoc.js" />
+
+$(function () {
+
+	/*
+    $('table').attr('cellspacing', '0');
+    $('tr').hover(function () { $(this).addClass('trHover'); }, function () { $(this).removeClass('trHover'); });
+    $('td').hover(function () { $(this).addClass('tdHover'); }, function () { $(this).removeClass('tdHover'); });
+	*/
+
+    //if (docType == 'Tutorial') {    	
+        // Syntax HighLigter
+        /*
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.autoloader(
+                        'js jscript javascript ' + path + 'jsLib/syntaxhighlighter_3.0.83/scripts/shBrushJScript.js',
+                        'xml html ' + path + 'jsLib/syntaxhighlighter_3.0.83/scripts/shBrushXml.js',
+                        'cs csharp C# ' + path + 'jsLib/syntaxhighlighter_3.0.83/scripts/shBrushCSharp.js',
+                        'cpp c C ' + path + 'jsLib/syntaxhighlighter_3.0.83/scripts/shBrushCpp.js',
+                        'java Java java ' + path + 'jsLib/syntaxhighlighter_3.0.83/scripts/shBrushJava.js',
+                        'bash shell ' + path + 'jsLib/syntaxhighlighter_3.0.83/scripts/shBrushBash.js',
+                        'applescript /js/shBrushAppleScript.js'
+                        );
+        SyntaxHighlighter.all();
+        */
+       prettyPrint();
+       
+       
+        $('div.Tip').corner().find('h3').css('background-image', 'none');
+        $(".tabs" ).tabs().css('float','left');
+        //$('.tabs a').corner('top');
+        //$("ul.tabs").tabs("div.panes > div");
+    //}
+    //$('table').attr('cellspacing', '0');
+    $('tr').hover(function () { $(this).addClass('trHover'); }, function () { $(this).removeClass('trHover'); });
+    $('td').hover(function () { $(this).addClass('tdHover'); }, function () { $(this).removeClass('tdHover'); });
+  
+  	$(' .arr, .brownArr, .blueArr').each(function(){
+  		$(this).text(' ⇒ ');
+  	});
+  	
+  	//格式, 宣告, 公式
+    $('.ex, .dfn, .desc, .param, .retVal, .rule, .notice').each(function(){
+    	var thisClass = $(this).attr('class');
+    	var html = '<span class="prefix">';
+    	switch( thisClass ){
+    		case 'ex':
+    			html = '<span class="exPrefix">範例：'
+    			break;			
+			case 'dfn':
+				html += '定義：';
+    			break;
+			case 'desc':
+				html += '說明：';
+    			break;    			
+			case 'param':
+				html += '參數：';
+    			break;
+			case 'retVal':
+				html += '回傳值：';				
+			case 'rule':
+				html += '規則：';				
+    			break;
+			case 'notice':
+				html += '注意：';				
+    			break;
+    	}  
+		$(this).prepend(html+'</span>');  		
+    }); 	
+
+	
+    $('.declareFormat, .format, .formula').each(function(){
+    	var thisClass = $(this).attr('class');
+    	var html = '<span class="prefix">';
+    	switch( thisClass ){    		
+			case 'declareFormat':
+				html += '格式：';				
+    			break;
+			case 'format':
+				html += '格式：';								
+    			break;
+    		case 'formula':    			
+				html += '公式：';								
+    			break;    			
+    	}  
+		$(this).before(html+'</span>');  		
+    });
+    
+    $('.step').each(function(){
+    	var thisClass = $(this).attr('class');
+    	switch( thisClass ){
+    		case 'step':
+    			$(this).text( 'Step' + $(this).text() + '：');
+    			break;
+    	}  		  	
+    }); 
+
+
+});

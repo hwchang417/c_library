@@ -1,0 +1,47 @@
+﻿
+var getRandomData = function(length){
+	var data = new Array();
+	for(var i = 0; i < length; i++)
+		data[i] = Math.floor((Math.random()*100)+1);
+	return data;	
+}; 
+
+/***** Algorithm *****/
+var initArray = function(buckets, count){
+	for(var i = 0; i < buckets.length; i++){
+		buckets[i]  = new Array(buckets.length);
+		count[i] = 0;
+	}
+}
+
+var radixSort = function(data){
+	var MAX = 100;
+	var dataIndex = 0, radix = 1;	// radix = 1, 10, 100
+	var buckets = new Array(data.length), count = new Array(data.length);
+	initArray( buckets, count );
+
+	while(radix <= MAX){
+		for(var i = 0; i < data.length; i++){
+			var LSD = parseInt((data[i]/radix)) % 10;
+			buckets[LSD][count[LSD]] = data[i];			
+			count[LSD]++;
+		}
+		radix *= 10;
+		
+		dataIndex = 0;
+		for(var i = 0; i < data.length; i++){
+			if(count[i] != 0){
+				for(var j =0 ; j < count[i]; j++){
+					data[dataIndex] = buckets[i][j];
+					dataIndex++;
+				}
+			}
+			count[i] = 0;
+		}		
+	}
+};
+
+$(function(){	
+	var data = getRandomData(10);	
+	radixSort(data);
+});

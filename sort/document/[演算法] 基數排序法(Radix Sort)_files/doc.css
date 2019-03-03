@@ -1,0 +1,182 @@
+﻿/*
+ * 取消exTitle,	影響
+ * 		CPP-Ch01-02Variable-5.php
+ * 		DS-Ch02-1.bak.php
+ * 		DS-Ch02-2.php
+ * 		DS-Ch02-3.php
+ * 		DS-Ch02-6.php
+ * 		DS-Ch02-7.php
+ */	
+ 
+
+/** Frame **/
+.content { width: 820px;}
+.content { padding-left: 10px; }
+.content p { margin-left: 10px; margin-top: 10px;  }	/** text-indent: 2em; 首行縮排 **/
+.content .h1 { color: Chocolate ; font-weight: bold;}
+.content .h2 { font-weight: bold; color: Red; }
+.content .h3 { font-weight: bold; color:OliveDrab; }
+.content .term { font-weight: bold; color: OrangeRed;}
+
+/** Caption **/	
+.content h1, .content h2, .content h3 {font-family:　"微軟正黑體", "Tahoma"; margin-top: 20px; }	
+.content h1 { font-size: 24px; margin-bottom: 10px;  color: #DC7100;  text-shadow: rgba(50, 50, 50, .3) 1px 1px 3px; }
+.content h2 { font-size: 16px; color: Maroon; padding-left: 20px; border-bottom: 1px solid YellowGreen ; border-left: 2px solid YellowGreen ; background: rgb(230,240,163); background: -moz-linear-gradient(top, rgba(230,240,163,1) 0%, rgba(210,230,56,1) 50%, rgba(195,216,37,1) 51%, rgba(219,240,67,1) 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(230,240,163,1)), color-stop(50%,rgba(210,230,56,1)), color-stop(51%,rgba(195,216,37,1)), color-stop(100%,rgba(219,240,67,1))); background: -webkit-linear-gradient(top, rgba(230,240,163,1) 0%,rgba(210,230,56,1) 50%,rgba(195,216,37,1) 51%,rgba(219,240,67,1) 100%); background: -o-linear-gradient(top, rgba(230,240,163,1) 0%,rgba(210,230,56,1) 50%,rgba(195,216,37,1) 51%,rgba(219,240,67,1) 100%); background: -ms-linear-gradient(top, rgba(230,240,163,1) 0%,rgba(210,230,56,1) 50%,rgba(195,216,37,1) 51%,rgba(219,240,67,1) 100%); background: linear-gradient(top, rgba(230,240,163,1) 0%,rgba(210,230,56,1) 50%,rgba(195,216,37,1) 51%,rgba(219,240,67,1) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6f0a3', endColorstr='#dbf043',GradientType=0 ); }
+.content h3 { font-size: 14px; color: Maroon; }
+
+
+
+/** UL OL **/
+
+.content ul { list-style-type: none; margin-left:20px;  /* margin: 0px; padding: 0px 20px;*/  }
+.content li { margin: 5px 0;}
+.content ul li { line-height: 22px; padding-left: 15px; background: url(../img/Bull_S_B1.png) no-repeat 0 5px; } 
+.content ul li {  background: url(../img/Bull_S_B1.png) no-repeat 0 5px;}
+/*
+.content ul li ul li { background: url(../img/Bull_S_B.png) no-repeat 0 5px;}
+.content ul li ul li ul li { background: url(../img/Bull_S_G2.png) no-repeat 0 5px;}
+.content ul li ul li ul li ul li { background: url(../img/Bull_S_B1.png) no-repeat 0 5px;}
+.content ul li ul li ul li ul li ul li { background: url(../img/Bull_S_B2.png) no-repeat 0 5px;}
+*/
+.content ol { margin-left: 40px; }
+.content ol li { padding-left: 0px; background: none;}
+
+
+
+/** Link **/
+.content a:link	{text-decoration:none; }
+.content a:hover	{text-decoration:underline;}
+.content a:visited	{ color: Blue; text-decoration:none; }
+
+
+
+/** Arrow **/
+.arr, .brownArr, .blueArr { font-weight: bolder; color: Brown; }
+.blueArr { color: Blue; }	
+/*
+.brownArr:before, .arr:before { content: "⇒"; color: Brown; font-weight: bolder;}
+.blueArr:before { content: "⇒"; color: Blue; font-weight: bolder;}
+*/
+
+
+
+/** Font Style - sub & sup **/
+sub, sup { font-size: 10px;  }
+sup { vertical-align: super;}
+
+/** Font Style - Weight **/
+.content .bold { font-weight:bold; }
+.content .bolder { font-weight: bolder; }
+
+/** Font Style - Color **/
+.content .red { color: Red; }
+.content .darkRed { color: DarkRed; }
+.content .brown { color: Brown; }
+.content .blue { color: Blue; }
+.content .green { color: Green; }
+.content .orange { color: OrangeRed; }
+.content .gold { color: GoldenRod; }
+.content .pink { color: DeepPink ; }
+.content .blue2 { color: CornflowerBlue; }
+.content .blue3, .content .aqua { color: Aqua; }
+.content .purple {color: Purple;}
+
+/** Font Style - Background **/
+.content .bgBlue { background: rgb(225,255,255); background: -moz-linear-gradient(top,  rgba(225,255,255,1) 0%, rgba(177,216,245,1) 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(225,255,255,1)), color-stop(100%,rgba(177,216,245,1))); background: -webkit-linear-gradient(top,  rgba(225,255,255,1) 0%,rgba(177,216,245,1) 100%); background: -o-linear-gradient(top,  rgba(225,255,255,1) 0%,rgba(177,216,245,1) 100%); background: -ms-linear-gradient(top,  rgba(225,255,255,1) 0%,rgba(177,216,245,1) 100%); background: linear-gradient(top,  rgba(225,255,255,1) 0%,rgba(177,216,245,1) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e1ffff', endColorstr='#b1d8f5',GradientType=0 ); }
+.content .bgYellow { background: rgb(254,252,234); background: -moz-linear-gradient(top,  rgba(254,252,234,1) 0%, rgba(247,241,56,1) 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(254,252,234,1)), color-stop(100%,rgba(247,241,56,1))); background: -webkit-linear-gradient(top,  rgba(254,252,234,1) 0%,rgba(247,241,56,1) 100%);  background: -o-linear-gradient(top,  rgba(254,252,234,1) 0%,rgba(247,241,56,1) 100%); background: -ms-linear-gradient(top,  rgba(254,252,234,1) 0%,rgba(247,241,56,1) 100%); background: linear-gradient(top,  rgba(254,252,234,1) 0%,rgba(247,241,56,1) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', endColorstr='#f7f138',GradientType=0 );  }
+
+/** Font Style - Font Size **/
+.content .font8 * { font-size: 8px; }
+.content .font10  * { font-size: 10px; }
+
+/** 語意 **/
+.content strong { color: Blue; font-style:normal; font-weight: bold;}
+.content em { color: Brown; font-style:normal; font-weight: bold;}
+.content blockquote {}
+.content q {}
+.content abbr{}
+.content cite{}
+.content dfn { color: Chocolate; font-weight: bold; font-style:normal; }
+.content .dfn { color: FireBrick; /*padding: 0 5px;*/ }	
+
+
+/** Format & Formula **/
+.content .inlineBlock { display:inline-block;}
+/* .content .declare {color:Chocolate ; font-weight: bold; } */
+.content .declareFormat, .content .format {padding:1px 10px; background: #FFFFB0; }
+/* .content .format { padding: 1px; padding-left:20px; padding-right:20px; border-bottom: dotted 1px Gray;  } */ 
+.content .formula { padding: 1px 10px; background: #FFEEFF;  }
+
+
+/** Step **/
+.content .step {  color: FireBrick; font-weight: bolder; }
+
+
+
+/** EX & Code **/
+/* .content .exIframe {  background:#ddedfb;border:1px solid #09C;border-radius:6px; background: rgb(242,249,254); background: -moz-linear-gradient(top, rgba(242,249,254,1) 0%, rgba(214,240,253,1) 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(242,249,254,1)), color-stop(100%,rgba(214,240,253,1))); background: -webkit-linear-gradient(top, rgba(242,249,254,1) 0%,rgba(214,240,253,1) 100%); background: -o-linear-gradient(top, rgba(242,249,254,1) 0%,rgba(214,240,253,1) 100%); background: -ms-linear-gradient(top, rgba(242,249,254,1) 0%,rgba(214,240,253,1) 100%); background: linear-gradient(top, rgba(242,249,254,1) 0%,rgba(214,240,253,1) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f9fe', endColorstr='#d6f0fd',GradientType=0 ); } */
+.content .prettyprint ol li {list-style-type: decimal; background: none; padding: 0px;}
+.content .prettyprint { padding-left: 10px;  letter-spacing: 0px; word-spacing: 0px; }
+.content .prettyprint * {line-height: 16px; }
+.content .linenums { padding-left: 0px; }
+.codeResult  { padding-left: 10px;  color: White ;  background: rgb(255,154,53); background: -moz-linear-gradient(top, rgba(255,154,53,1) 1%, rgba(255,80,0,1) 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(255,154,53,1)), color-stop(100%,rgba(255,80,0,1))); background: -webkit-linear-gradient(top, rgba(255,154,53,1) 1%,rgba(255,80,0,1) 100%); background: -o-linear-gradient(top, rgba(255,154,53,1) 1%,rgba(255,80,0,1) 100%); background: -ms-linear-gradient(top, rgba(255,154,53,1) 1%,rgba(255,80,0,1) 100%); background: linear-gradient(top, rgba(255,154,53,1) 1%,rgba(255,80,0,1) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9a35', endColorstr='#ff5000',GradientType=0 ); }
+.content .noborder { border: none; }
+
+
+/** Tip **/
+.content div.Tip{background-position:#000;margin-top:10px;margin-bottom:10px;margin-left:30px;background:#FD5;color:OrangeRed ;width:600px;padding:10px; background: rgb(255,255,136); background: -moz-linear-gradient(top,  rgba(255,255,136,1) 0%, rgba(255,255,136,1) 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,136,1)), color-stop(100%,rgba(255,255,136,1))); background: -webkit-linear-gradient(top,  rgba(255,255,136,1) 0%,rgba(255,255,136,1) 100%); background: -o-linear-gradient(top,  rgba(255,255,136,1) 0%,rgba(255,255,136,1) 100%); background: -ms-linear-gradient(top,  rgba(255,255,136,1) 0%,rgba(255,255,136,1) 100%); background: linear-gradient(top,  rgba(255,255,136,1) 0%,rgba(255,255,136,1) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffff88', endColorstr='#ffff88',GradientType=0 ); }
+.content div.Tip h3:before{content:url(../img/comments-32.png);}
+.content div.Tip h3{color:#800;margin: 0px;padding:0px 10px; width: 500px; border: none; background: none; text-align: left; line-height: 37px; vertical-align: top; height: 37px; }
+.content div.Tip p{margin:0; padding:0 0 0 30px;}
+.content .TipCode { padding: 0px 30px; }
+
+
+
+/** Table Start **/
+.content table { border-collapse: collapse; border-right: 1px solid RoyalBlue ; margin-top: 10px; margin-bottom: 30px; }
+.content table th, .content table td {   border-left: 1px solid RoyalBlue; border-bottom: 1px solid RoyalBlue; padding: 2px 10px; vertical-align:top; font-weight: normal; }
+.content table th  { color: White; background: rgb(109,179,242); background: -moz-linear-gradient(top, rgba(109,179,242,1) 0%, rgba(84,163,238,1) 50%, rgba(54,144,240,1) 51%, rgba(30,105,222,1) 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(109,179,242,1)), color-stop(50%,rgba(84,163,238,1)), color-stop(51%,rgba(54,144,240,1)), color-stop(100%,rgba(30,105,222,1))); background: -webkit-linear-gradient(top, rgba(109,179,242,1) 0%,rgba(84,163,238,1) 50%,rgba(54,144,240,1) 51%,rgba(30,105,222,1) 100%); background: -o-linear-gradient(top, rgba(109,179,242,1) 0%,rgba(84,163,238,1) 50%,rgba(54,144,240,1) 51%,rgba(30,105,222,1) 100%); background: -ms-linear-gradient(top, rgba(109,179,242,1) 0%,rgba(84,163,238,1) 50%,rgba(54,144,240,1) 51%,rgba(30,105,222,1) 100%); background: linear-gradient(top, rgba(109,179,242,1) 0%,rgba(84,163,238,1) 50%,rgba(54,144,240,1) 51%,rgba(30,105,222,1) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6db3f2', endColorstr='#1e69de',GradientType=0 ); }
+.content table thead.textAlignCenter th { text-align: center; }
+.content table tbody.textAlignCenter td { text-align: center; }
+.content table.hover .trHover {  background: rgb(254,252,234); background: -moz-linear-gradient(top, rgba(254,252,234,1) 0%, rgba(241,218,54,1) 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(254,252,234,1)), color-stop(100%,rgba(241,218,54,1)));  background: -webkit-linear-gradient(top, rgba(254,252,234,1) 0%,rgba(241,218,54,1) 100%); background: -o-linear-gradient(top, rgba(254,252,234,1) 0%,rgba(241,218,54,1) 100%); background: -ms-linear-gradient(top, rgba(254,252,234,1) 0%,rgba(241,218,54,1) 100%); background: linear-gradient(top, rgba(254,252,234,1) 0%,rgba(241,218,54,1) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', endColorstr='#f1da36',GradientType=0 ); }
+.content table.hover .tdHover { background: rgb(183,222,237); background: -moz-linear-gradient(top, rgba(183,222,237,1) 0%, rgba(113,206,239,1) 50%, rgba(33,180,226,1) 51%, rgba(183,222,237,1) 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(183,222,237,1)), color-stop(50%,rgba(113,206,239,1)), color-stop(51%,rgba(33,180,226,1)), color-stop(100%,rgba(183,222,237,1))); background: -webkit-linear-gradient(top, rgba(183,222,237,1) 0%,rgba(113,206,239,1) 50%,rgba(33,180,226,1) 51%,rgba(183,222,237,1) 100%); background: -o-linear-gradient(top, rgba(183,222,237,1) 0%,rgba(113,206,239,1) 50%,rgba(33,180,226,1) 51%,rgba(183,222,237,1) 100%); background: -ms-linear-gradient(top, rgba(183,222,237,1) 0%,rgba(113,206,239,1) 50%,rgba(33,180,226,1) 51%,rgba(183,222,237,1) 100%); background: linear-gradient(top, rgba(183,222,237,1) 0%,rgba(113,206,239,1) 50%,rgba(33,180,226,1) 51%,rgba(183,222,237,1) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b7deed', endColorstr='#b7deed',GradientType=0 ); }
+
+.content table.verticalAlignMiddle td {vertical-align:middle;}
+.content table.textAlignCenter td {text-align: center;}
+.content table.noborder {border: none;}
+.content table.noborder td {border: none; vertical-align:middle; }
+
+
+
+/** Tab頁籤 **/
+/* .content .tabs li { background-image: none; padding: 0px; } */
+/*
+.content .tabs>ul { height: 20px; }
+.content .tabs>ul>li { height: 18px; }
+.content .tabs>ul>li>a { height: 18px; font-size: 12px; line-height: 18px; padding: 0 6px;}
+.content .tabs>div { padding: 0px;}
+*/
+.content .tabs>ul>li>a { font-size: 12px; font-family: Arial;}
+.content .animate { border: 1px solid DodgerBlue; padding: 5px;}
+.content .tabEnd { clear: left;}
+
+/** Reference 參考列表**/
+.content .reference {background: none; border: none; width: 100%; font-size: 16px; font-weight: Bold; color: LightSeaGreen; border-top: Dotted 1px dodgerBlue; margin-top: 20px; padding-top: 10px; padding-left: 20px; text-align: left; text-shadow: rgba(50, 50, 50, .3) 1px 1px 0px; }
+
+/** foreword 前言 **/
+.content div.foreword {margin: 20px auto; width: 500px; background: LightGoldenRodYellow ; padding: 10px; border: 2px dotted Gray; }
+
+/** Pic Style (Javascript) **/
+.content div.leftFig>img {display: block; margin: 10px 20px;}
+.content div.leftFig>span {display: block; margin-left: 30px; margin-bottom: 20px;  color: darkViolet;}
+			
+
+
+/** Prefix, refernece main.js **/
+/* .ex(範例) .dfn(定義) .desc(說明) .param(參數) .retVal(回傳值) .rule(規則) .notice(注意) */	
+.content .prefix, .content .exPrefix	{font-weight: bold;  text-shadow: rgba(50, 50, 50, .3) 1px 1px 1px;}
+.content .prefix	{color: DodgerBlue;}
+.content .exPrefix	{color:OliveDrab;}
+.content .ex { color: DarkViolet; } 
+
+.hide { display:none;}

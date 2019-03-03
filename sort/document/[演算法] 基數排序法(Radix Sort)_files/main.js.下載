@@ -1,0 +1,65 @@
+﻿/// <reference path="../jsLib/jquery-1.7-vsdoc.js" />
+
+var NOTEPAD = NOTEPAD || {};
+NOTEPAD.namespace = function() {
+    var a=arguments, o=null, i, j, d;
+    for (i=0; i < a.length; i=i+1) {
+        d=a[i].split(".");
+        o=NOTEPAD;
+        for (j=(d[0] == "NOTEPAD") ? 1 : 0; j < d.length; j=j+1) {
+            o[d[j]]=o[d[j]] || {};
+            o=o[d[j]];
+        }
+    }
+    return o;
+};
+
+var path = window.location.pathname.substr(0, 10);
+if (location.hostname != 'localhost')
+    path = '/';
+
+var docType = $('meta[name="type"]').attr('content');
+if (docType == undefined)
+    docType = 'Tutorial';
+
+$(function () {
+
+    // PrevPage, NextPage
+    var $curA="", $prevA="", $postA="";
+	var curHref = location.href;
+
+    $('#menuUL a[href$=php]').each(function(){
+    	if( $(this).attr('href') == curHref)
+    		$curA = $(this);
+		else if($curA == "")
+			$prevA = $(this);
+		else if( $postA == "" && $curA != "")
+			$postA = $(this);
+    });
+
+	
+	var prevTitle = ($prevA && $prevA.attr('title') != undefined) ? '[' + $prevA.attr('title') + ']': '';
+	var postTitle = ($postA && $postA.attr('title') != undefined) ? '[' + $postA.attr('title') + ']' : '';
+			
+
+    $('.content').append('<div class="clear"></div><div class="PreNextPageLink"></div>');
+	if( $prevA != "")
+		$('.PreNextPageLink').append('<a class="PrePageLink" title="' + $prevA.text()  + '" href="' + $prevA.attr('href') + '" >&#9668;前一篇 ' + prevTitle +  $prevA.text() + '</a>');
+	if( $postA != "")
+		$('.PreNextPageLink').append('<a class="NextPageLink"  title="' + $postA.text() + '" href="' + $postA.attr('href') + '" >' + postTitle + $postA.text() + ' 後一篇&#9658;</a>');
+    $('.PreNextPageLink').append('<div style="clear:both;" > </div>');
+    
+    
+	/*
+    $("ul.sf-menu").superfish({
+        delay: 1000, // one second delay on mouseout
+        animation: { opacity: 'show', height: 'show' }, // fade-in and slide-down animation
+        speed: 'fast', // faster animation speed
+        //autoArrows: true, // disable generation of arrow mark-up
+        dropShadows: true // disable drop shadows
+    });*/
+        
+    $("ul.sf-menu").superfish({speed: 'fast'}).find('ul').bgIframe({opacity:false});
+
+  
+});
